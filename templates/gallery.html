@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeries - GR20 en Corse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="galleries-page">
+    <div class="galleries-hero">
+        <div class="top-bar">
+            <a href="{{ url_for('index') }}" class="back-link">← Retour à l'accueil</a>
+            <a href="{{ url_for('create_gallery') }}" class="create-btn">Créer une galerie</a>
+        </div>
+
+        <main class="galleries-container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="galleries-grid">
+                {% for gallery in galleries %}
+                    <article class="gallery-card">
+                        <a href="{{ url_for('gallery', gallery_id=gallery.id) }}" class="gallery-link">
+                            <div class="gallery-image">
+                                {% if gallery.cover_image %}
+                                    <img src="{{ gallery.cover_image }}" 
+                                         alt="{{ gallery.title }}">
+                                {% endif %}
+                            </div>
+                            <div class="gallery-info">
+                                <h3>{{ gallery.title }}</h3>
+                                <time>{{ gallery.date }}</time>
+                                {% if gallery.description %}
+                                    <p class="gallery-description">{{ gallery.description }}</p>
+                                {% endif %}
+                            </div>
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

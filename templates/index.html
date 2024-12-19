@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR20 en Corse - Accueil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="landing-page">
+    <div class="audio-control">
+        <button id="toggleAudio" class="audio-btn">
+            <i class="fas fa-volume-up" id="audioIcon"></i>
+        </button>
+        <audio id="backgroundMusic" loop>
+            <source src="{{ url_for('static', filename='audio/corsican_song.mp3') }}" type="audio/mp3">
+            Votre navigateur ne supporte pas l'élément audio.
+        </audio>
+    </div>
+
+    <div class="fullscreen-hero">
+        <div class="hero-content">
+            <h1>GR20 en Corse</h1>
+            <p class="subtitle">Découvrez la beauté sauvage du plus beau GR de France</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('galleries') }}" class="cta-btn">Voir les galeries</a>
+                <a href="{{ url_for('create_gallery') }}" class="cta-btn secondary">Créer une galerie</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Découvrir</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </div>
+
+    <div class="discover-section">
+        <div class="container">
+            <h2>Le GR20</h2>
+            <p>Le GR20 est considéré comme l'un des sentiers de grande randonnée les plus difficiles d'Europe. 
+            Traversant la Corse du nord au sud, il offre des paysages à couper le souffle et des défis uniques 
+            pour les randonneurs aventureux.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('backgroundMusic');
+            const toggleBtn = document.getElementById('toggleAudio');
+            const audioIcon = document.getElementById('audioIcon');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            let isPlaying = false;
+
+            function togglePlay() {
+                if (isPlaying) {
+                    audio.pause();
+                    audioIcon.className = 'fas fa-volume-mute';
+                } else {
+                    audio.play();
+                    audioIcon.className = 'fas fa-volume-up';
+                }
+                isPlaying = !isPlaying;
+            }
+
+            toggleBtn.addEventListener('click', togglePlay);
+
+            // Gestion du défilement doux
+            scrollIndicator.addEventListener('click', function() {
+                const discoverSection = document.querySelector('.discover-section');
+                discoverSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            audio.addEventListener('ended', function() {
+                audio.currentTime = 0;
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ gallery.title }} - GR20 en Corse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lightbox.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-detail-page">
+    <div class="gallery-detail-hero">
+        <div class="top-bar">
+            <a href="{{ url_for('galleries') }}" class="back-link">← Retour aux galeries</a>
+            <div class="gallery-actions">
+                <a href="{{ url_for('edit_gallery', gallery_id=gallery_id) }}" class="edit-btn">Modifier</a>
+                <form action="{{ url_for('delete_gallery', gallery_id=gallery_id) }}" method="POST" class="delete-form" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette galerie ?');">
+                    <button type="submit" class="delete-btn">Supprimer la galerie</button>
+                </form>
+            </div>
+        </div>
+
+        <header class="gallery-header">
+            <h1>{{ gallery.title }}</h1>
+            <time>{{ gallery.date }}</time>
+            <p class="gallery-description">{{ gallery.description }}</p>
+        </header>
+
+        <main class="gallery-content">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <section class="upload-section">
+                <form action="{{ url_for('upload_photos', gallery_id=gallery_id) }}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="photos" multiple accept="image/*" required>
+                    <button type="submit">Ajouter des photos</button>
+                </form>
+            </section>
+
+            <div class="photos-grid">
+                {% for image in gallery.images %}
+                    <div class="photo-item">
+                        <a href="{{ image.image_url }}" data-lightbox="gallery" class="photo-link">
+                            <img src="{{ image.thumbnail_url }}" alt="{{ gallery.title }}" loading="lazy">
+                        </a>
+                        <div class="photo-actions">
+                            {% if loop.index0 == 0 %}
+                                <span class="cover-badge">Photo de couverture</span>
+                            {% else %}
+                                <form action="{{ url_for('set_gallery_cover', gallery_id=gallery_id, image_index=loop.index0) }}" method="POST" class="set-cover-form">
+                                    <button type="submit" class="set-cover-btn">Définir comme couverture</button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/lightbox.js') }}"></script>
+</body>
+</html>
