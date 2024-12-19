@@ -1,16 +1,52 @@
-# Corsica Gallery
+# GR20 Gallery App
 
-Une galerie d'images pour afficher des photos de la Corse, basée sur le projet hiking-gallery.
-
-## Installation
-
-1. Cloner le repository
-2. Installer les dépendances Python : `pip install -r requirements.txt`
-3. Copier `.env.example` vers `.env` et configurer les variables d'environnement
-4. Lancer l'application : `python app.py`
+Application web pour partager et gérer des photos du GR20 en Corse.
 
 ## Fonctionnalités
 
-- Affichage des photos en galerie
-- Lightbox pour visualiser les images en grand format
-- Navigation entre les images
+- Création et gestion de galeries photos
+- Upload d'images avec génération automatique de miniatures
+- Stockage des images sur Supabase
+- Lecteur audio intégré avec musique d'ambiance corse
+- Interface responsive et moderne
+
+## Installation
+
+1. Cloner le repository :
+```bash
+git clone https://github.com/mikelum38/GR20.git
+cd GR20
+```
+
+2. Installer les dépendances :
+```bash
+pip install -r requirements.txt
+```
+
+3. Configurer les variables d'environnement :
+- Copier `.env.example` vers `.env`
+- Remplir les variables avec vos propres valeurs
+
+4. Lancer l'application :
+```bash
+python app.py
+```
+
+## Configuration
+
+L'application nécessite un compte Supabase pour le stockage des images. Configurez les variables suivantes dans votre fichier `.env` :
+
+- `SUPABASE_URL` : URL de votre projet Supabase
+- `SUPABASE_KEY` : Clé d'API Supabase
+- `SUPABASE_BUCKET_NAME` : Nom du bucket pour le stockage des images
+
+## Technologies utilisées
+
+- Flask (Backend)
+- Supabase (Stockage)
+- HTML/CSS/JavaScript (Frontend)
+- Lightbox.js (Galerie photos)
+
+## Licence
+
+MIT
