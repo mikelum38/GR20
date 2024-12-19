@@ -33,6 +33,8 @@ ENV/
 
 # Environment variables
 .env
+.env.example
+.env bis
 
 # Logs
 *.log
@@ -41,3 +43,7 @@ ENV/
 static/uploads/
 static/thumbnails/
 temp/
+
+# Firebase
+serviceAccountKey.json
+instance/
