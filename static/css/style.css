@@ -163,130 +163,114 @@ body {
 /* Page des galeries */
 .galleries-page {
     min-height: 100vh;
-}
-
-.galleries-hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=2070&auto=format&fit=crop');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('/static/images/11-Conca-IPaliri-Panorama-NE.jpg') center center;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
 }
 
-.top-bar {
+.top-nav {
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-}
-
-.back-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    font-size: 1.1rem;
-}
-
-.back-link:hover {
-    color: var(--accent-color);
-}
-
-.galleries-container {
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.galleries-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 1rem 0;
-}
-
-.gallery-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.gallery-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.gallery-image {
-    position: relative;
-    padding-top: 66.67%;
-    overflow: hidden;
-}
-
-.gallery-image img {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.back-link {
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+}
+
+.create-btn {
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+}
+
+.galleries-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.galleries-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.galleries-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 0;
+    margin: 0 40px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
+}
+
+.galleries-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-card {
+    scroll-snap-align: start;
+    flex: 0 0 220px !important;
+    height: 300px !important;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 4px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
-}
-
-.gallery-card:hover .gallery-image img {
-    transform: scale(1.05);
 }
 
 .gallery-info {
-    padding: 1.5rem;
-    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 6px !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
 .gallery-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.gallery-info time {
-    display: block;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-}
-
-.gallery-description {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.galleries-hero .create-btn {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.galleries-hero .create-btn:hover {
-    background-color: #d35400;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #fff !important;
+    font-size: 0.85rem !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 /* Features section */
@@ -925,4 +909,189 @@ header h1 {
 .audio-btn i {
     color: white;
     font-size: 1.5rem;
+}
+
+.description-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.description-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Styles pour la page de description de randonnée */
+.hike-description-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.description-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.description-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.description-content h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.description-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+.description-form {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.description-textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 400px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.description-textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.save-btn {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.save-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.top-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.back-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #3498db;
+}
+
+/* Supprimer les styles de story-preview qui ne sont plus utilisés */
+.story-preview,
+.story-preview h3,
+.story-preview p,
+.read-more,
+.read-more:hover {
+    display: none;
+}
+
+/* Styles pour le bouton du récit */
+.story-button-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.story-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.story-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(135deg, #2980b9, #2471a3);
+}
+
+.story-button:active {
+    transform: translateY(0);
+}
+
+.story-icon {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
 }

@@ -48,50 +48,35 @@ class SupabaseStorage:
             # Construct the storage path
             storage_path = f"{folder}/{unique_filename}" if folder else unique_filename
             
-            # Open and optimize the image
-            with Image.open(file_path) as img:
-                # Convert to RGB if necessary
-                if img.mode in ('RGBA', 'P'):
-                    img = img.convert('RGB')
-                
-                # Create an in-memory buffer
-                buffer = io.BytesIO()
-                
-                # Save with optimization
-                img.save(buffer, format='JPEG', optimize=True, quality=85)
-                buffer.seek(0)
-                
-                # Prepare the file for upload
-                files = {'file': (storage_path, buffer, 'image/jpeg')}
-                
-                # Upload to Supabase Storage
-                response = requests.post(
-                    f"{self.base_url}/storage/v1/object/{self.bucket_name}/{storage_path}",
-                    headers=self.headers,
-                    files=files
-                )
-                
-                if response.status_code != 200:
-                    raise Exception(f"Upload failed: {response.status_code} - {response.text}")
-                
-                # Get public URL
-                public_url = f"{self.base_url}/storage/v1/object/public/{self.bucket_name}/{storage_path}"
-                
-                return {
-                    'path': storage_path,
-                    'url': public_url,
-                    'size': os.path.getsize(file_path)
-                }
-                
-        except Exception as e:
-            print(f"Failed to upload image to Supabase Storage: {str(e)}")
-            raise
+            # Read the file
+            with open(file_path, 'rb') as f:
+                file_data = f.read()
 
-    def delete_image(self, file_path: str) -> bool:
+            # Upload to Supabase Storage
+            url = f"{self.base_url}/storage/v1/object/{self.bucket_name}/{storage_path}"
+            response = requests.post(
+                url,
+                headers=self.headers,
+                data=file_data
+            )
+            response.raise_for_status()
+
+            # Construct the public URL
+            public_url = f"{self.base_url}/storage/v1/object/public/{self.bucket_name}/{storage_path}"
+            
+            return {
+                'path': storage_path,
+                'url': public_url
+            }
+
+        except Exception as e:
+            raise Exception(f"Failed to upload image: {str(e)}")
+
+    def delete_image(self, path: str) -> bool:
         """Delete an image from Supabase Storage
         
         Args:
-            file_path: Storage path of the file to delete
+            path: Path to the image in storage
             
         Returns:
             bool: True if deletion was successful
@@ -100,30 +85,15 @@ class SupabaseStorage:
             Exception: If deletion fails
         """
         try:
+            url = f"{self.base_url}/storage/v1/object/{self.bucket_name}/{path}"
             response = requests.delete(
-                f"{self.base_url}/storage/v1/object/{self.bucket_name}/{file_path}",
+                url,
                 headers=self.headers
             )
-            
-            if response.status_code != 200:
-                raise Exception(f"Delete failed: {response.status_code} - {response.text}")
-                
+            response.raise_for_status()
             return True
-            
         except Exception as e:
-            print(f"Failed to delete image from Supabase Storage: {str(e)}")
-            raise
+            raise Exception(f"Failed to delete image: {str(e)}")
 
-    def get_image_url(self, file_path: str) -> str:
-        """Get the public URL for an image
-        
-        Args:
-            file_path: Storage path of the file
-            
-        Returns:
-            str: Public URL of the image
-        """
-        return f"{self.base_url}/storage/v1/object/public/{self.bucket_name}/{file_path}"
-
-# Create a singleton instance
+# Create singleton instance
 storage = SupabaseStorage()

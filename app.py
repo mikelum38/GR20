@@ -14,6 +14,9 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 THUMBNAIL_SIZE = (400, 300)
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'galleries.json')
 
+# Mode développement/production
+DEV_MODE = False  # Force le mode production
+
 # Créer le dossier data s'il n'existe pas
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
 
@@ -59,36 +62,45 @@ def galleries():
     formatted_galleries = []
     
     for gallery_id, gallery in galleries_data.items():
-        formatted_gallery = gallery.copy()
-        formatted_gallery['id'] = gallery_id
+        # Récupérer l'image de couverture depuis la première image de la galerie
+        cover_image = None
+        if 'images' in gallery and gallery['images']:
+            first_image = gallery['images'][0]
+            cover_image = first_image.get('thumbnail_url')
         
-        # Format the date
-        if 'date' in formatted_gallery:
-            formatted_gallery['date'] = format_date(formatted_gallery['date'])
-            
-        # Get cover image
-        if formatted_gallery.get('images'):
-            formatted_gallery['cover_image'] = formatted_gallery['images'][0]['thumbnail_url']
-        else:
-            formatted_gallery['cover_image'] = None
-            
-        formatted_galleries.append(formatted_gallery)
+        # Extraire le numéro du jour (J1, J2, etc.)
+        day_num = 999  # Valeur par défaut pour les titres non conformes
+        title = gallery['title'].strip()
+        if title.startswith('J'):
+            try:
+                # Extraire uniquement le numéro après J
+                day_str = ''.join(filter(str.isdigit, title.split(',')[0]))
+                if day_str:
+                    day_num = int(day_str)
+            except:
+                pass
+        
+        formatted_galleries.append({
+            'id': gallery_id,
+            'title': gallery['title'],
+            'cover_image': cover_image,
+            'day_num': day_num
+        })
     
-    # Sort galleries by date (most recent first)
-    formatted_galleries.sort(key=lambda x: x.get('date', ''), reverse=True)
-    
-    return render_template('gallery.html', galleries=formatted_galleries)
+    # Trier les galeries par numéro de jour
+    formatted_galleries.sort(key=lambda x: x['day_num'])
+    return render_template('galleries.html', galleries=formatted_galleries, dev_mode=DEV_MODE)
 
-@app.route('/gallery/<gallery_id>')
+@app.route('/gallery/<string:gallery_id>')
 def gallery(gallery_id):
-    galleries = load_gallery_data()
-    if gallery_id not in galleries:
-        flash('Galerie introuvable', 'error')
-        return redirect(url_for('galleries'))
-    
-    gallery = galleries[gallery_id]
-    gallery['date'] = format_date(gallery['date'])
-    return render_template('gallery_detail.html', gallery=gallery, gallery_id=gallery_id)
+    gallery_data = load_gallery_data()
+    if gallery_id in gallery_data:
+        gallery = gallery_data[gallery_id]
+        gallery['id'] = gallery_id
+        if 'date' in gallery:
+            gallery['formatted_date'] = format_date(gallery['date'])
+        return render_template('gallery.html', gallery=gallery, dev_mode=DEV_MODE)
+    return redirect(url_for('galleries'))
 
 @app.route('/create_gallery', methods=['GET', 'POST'])
 def create_gallery():
@@ -117,7 +129,7 @@ def create_gallery():
     
     return render_template('create_gallery.html')
 
-@app.route('/gallery/<gallery_id>/upload', methods=['POST'])
+@app.route('/gallery/<string:gallery_id>/upload', methods=['POST'])
 def upload_photos(gallery_id):
     if 'photos' not in request.files:
         flash('Aucun fichier sélectionné', 'error')
@@ -185,7 +197,7 @@ def upload_photos(gallery_id):
     
     return redirect(url_for('gallery', gallery_id=gallery_id))
 
-@app.route('/gallery/<gallery_id>/delete', methods=['POST'])
+@app.route('/gallery/<string:gallery_id>/delete', methods=['POST'])
 def delete_gallery(gallery_id):
     try:
         galleries = load_gallery_data()
@@ -214,7 +226,7 @@ def delete_gallery(gallery_id):
     
     return redirect(url_for('galleries'))
 
-@app.route('/gallery/<gallery_id>/edit', methods=['GET', 'POST'])
+@app.route('/gallery/<string:gallery_id>/edit', methods=['GET', 'POST'])
 def edit_gallery(gallery_id):
     galleries = load_gallery_data()
     if gallery_id not in galleries:
@@ -241,7 +253,7 @@ def edit_gallery(gallery_id):
         
     return render_template('edit_gallery.html', gallery=gallery, gallery_id=gallery_id)
 
-@app.route('/gallery/<gallery_id>/set_cover/<int:image_index>', methods=['POST'])
+@app.route('/gallery/<string:gallery_id>/set_cover/<int:image_index>', methods=['POST'])
 def set_gallery_cover(gallery_id, image_index):
     galleries = load_gallery_data()
     if gallery_id not in galleries:
@@ -260,6 +272,33 @@ def set_gallery_cover(gallery_id, image_index):
     save_gallery_data(galleries)
     flash('Photo de couverture mise à jour avec succès', 'success')
     return redirect(url_for('gallery', gallery_id=gallery_id))
+
+@app.route('/gallery/<string:gallery_id>/description', methods=['GET', 'POST'])
+def hike_description(gallery_id):
+    galleries = load_gallery_data()
+    if gallery_id not in galleries:
+        flash('Galerie introuvable', 'error')
+        return redirect(url_for('galleries'))
+
+    if request.method == 'POST':
+        story = request.form.get('description')
+        # Créer un champ séparé pour le récit s'il n'existe pas
+        if 'story' not in galleries[gallery_id]:
+            galleries[gallery_id]['story'] = ''
+        # Sauvegarder le récit séparément de la description
+        galleries[gallery_id]['story'] = story
+        save_gallery_data(galleries)
+        flash('Récit enregistré avec succès!', 'success')
+        return redirect(url_for('gallery', gallery_id=gallery_id))
+    
+    gallery = galleries[gallery_id]
+    gallery['id'] = gallery_id
+    # Utiliser le champ story pour le récit
+    return render_template('hike_description.html', 
+                         gallery_id=gallery_id,
+                         gallery=gallery,
+                         description=gallery.get('story', ''),
+                         dev_mode=DEV_MODE)
 
 if __name__ == '__main__':
     app.run(debug=True)

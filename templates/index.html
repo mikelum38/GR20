@@ -43,38 +43,25 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('backgroundMusic');
-            const toggleBtn = document.getElementById('toggleAudio');
-            const audioIcon = document.getElementById('audioIcon');
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            let isPlaying = false;
+    <div class="galleries-container">
+        <button class="nav-arrow nav-prev" aria-label="Précédent">&#10094;</button>
+        <div class="galleries-grid">
+            {% for gallery in galleries %}
+            <div class="gallery-card">
+                <a href="{{ url_for('view_gallery', gallery_id=gallery.id) }}" class="gallery-link">
+                    <div class="gallery-image">
+                        <img src="{{ url_for('static', filename=gallery.cover_image) }}" alt="{{ gallery.title }}">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>{{ gallery.title }}</h3>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="nav-arrow nav-next" aria-label="Suivant">&#10095;</button>
+    </div>
 
-            function togglePlay() {
-                if (isPlaying) {
-                    audio.pause();
-                    audioIcon.className = 'fas fa-volume-mute';
-                } else {
-                    audio.play();
-                    audioIcon.className = 'fas fa-volume-up';
-                }
-                isPlaying = !isPlaying;
-            }
-
-            toggleBtn.addEventListener('click', togglePlay);
-
-            // Gestion du défilement doux
-            scrollIndicator.addEventListener('click', function() {
-                const discoverSection = document.querySelector('.discover-section');
-                discoverSection.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            audio.addEventListener('ended', function() {
-                audio.currentTime = 0;
-                audio.play();
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

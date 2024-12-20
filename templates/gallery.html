@@ -3,48 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeries - GR20 en Corse</title>
+    <title>{{ gallery.title }} - GR20 en Corse</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery-page {
+            min-height: 100vh;
+            padding: 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('{{ url_for('static', filename='images/11-Conca-IPaliri-Panorama-NE.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 40px;
+            background: linear-gradient(135deg, 
+                rgba(236, 240, 241, 0.95), 
+                rgba(224, 234, 241, 0.9),
+                rgba(214, 229, 241, 0.85)
+            );
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-header h1 {
+            font-size: 2.5em;
+            margin: 0 0 15px 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .gallery-header .date {
+            font-size: 1.1em;
+            color: #576574;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .gallery-header .description {
+            font-size: 1.2em;
+            color: #2d3436;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .control-btn, .story-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .control-btn:hover, .story-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .story-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(41, 128, 185, 0.3);
+        }
+
+        .story-btn:before {
+            content: "✎";
+            font-size: 1.1em;
+        }
+
+        .story-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #2c3e50);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.4);
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .photo-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .set-cover-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .photo-card:hover .set-cover-btn {
+            opacity: 1;
+        }
+
+        .set-cover-btn:hover {
+            background: rgba(0, 123, 255, 1);
+        }
+
+        /* Styles pour la visionneuse */
+        .viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .viewer.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .viewer img {
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .viewer-prev, .viewer-next, .viewer-rotate {
+            position: fixed;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 20px;
+            z-index: 2001;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        .viewer-prev, .viewer-next {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .viewer-rotate {
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            padding: 15px;
+        }
+
+        .viewer-prev {
+            left: 20px;
+        }
+
+        .viewer-next {
+            right: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal-buttons {
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            padding: 8px 16px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .confirm-btn {
+            background: #dc3545;
+            color: white;
+        }
+
+        .cancel-btn {
+            background: #6c757d;
+            color: white;
+        }
+    </style>
 </head>
-<body class="galleries-page">
-    <div class="galleries-hero">
-        <div class="top-bar">
-            <a href="{{ url_for('index') }}" class="back-link">← Retour à l'accueil</a>
-            <a href="{{ url_for('create_gallery') }}" class="create-btn">Créer une galerie</a>
+<body class="gallery-page">
+    <nav class="top-nav">
+        <a href="{{ url_for('galleries') }}" class="back-link">← Retour aux galeries</a>
+    </nav>
+
+    <div class="gallery-header">
+        <h1>{{ gallery.title }}</h1>
+        {% if gallery.date %}
+        <div class="date">{{ gallery.formatted_date }}</div>
+        {% endif %}
+        {% if gallery.description %}
+        <div class="description">{{ gallery.description }}</div>
+        {% endif %}
+        <div style="margin-top: 20px;">
+            <a href="{{ url_for('hike_description', gallery_id=gallery.id) }}" class="story-btn">Lire le récit</a>
         </div>
-
-        <main class="galleries-container">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">{{ message }}</div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-            <div class="galleries-grid">
-                {% for gallery in galleries %}
-                    <article class="gallery-card">
-                        <a href="{{ url_for('gallery', gallery_id=gallery.id) }}" class="gallery-link">
-                            <div class="gallery-image">
-                                {% if gallery.cover_image %}
-                                    <img src="{{ gallery.cover_image }}" 
-                                         alt="{{ gallery.title }}">
-                                {% endif %}
-                            </div>
-                            <div class="gallery-info">
-                                <h3>{{ gallery.title }}</h3>
-                                <time>{{ gallery.date }}</time>
-                                {% if gallery.description %}
-                                    <p class="gallery-description">{{ gallery.description }}</p>
-                                {% endif %}
-                            </div>
-                        </a>
-                    </article>
-                {% endfor %}
-            </div>
-        </main>
     </div>
+
+    {% if dev_mode %}
+    <div class="gallery-controls">
+        <a href="{{ url_for('edit_gallery', gallery_id=gallery.id) }}" class="control-btn">Modifier</a>
+        <a href="{{ url_for('upload_photos', gallery_id=gallery.id) }}" class="control-btn">Ajouter des photos</a>
+        <button onclick="showDeleteModal()" class="control-btn delete-btn">Supprimer</button>
+    </div>
+    {% endif %}
+
+    <div class="photos-grid">
+        {% if gallery.images %}
+            {% for image in gallery.images %}
+                <div class="photo-card" onclick="openViewer({{ loop.index0 }})">
+                    <img src="{{ image.image_url }}" alt="Photo de la galerie">
+                    {% if dev_mode %}
+                    <button onclick="event.stopPropagation(); setCover('{{ gallery.id }}', {{ loop.index0 }})" class="set-cover-btn">Définir comme couverture</button>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Aucune photo dans cette galerie</p>
+        {% endif %}
+    </div>
+
+    <!-- Visionneuse de photos -->
+    <div class="viewer" id="photoViewer" onclick="closeViewer()">
+        <img id="viewerImage" src="" alt="Photo en plein écran" onclick="event.stopPropagation();">
+        <div class="viewer-prev" onclick="event.stopPropagation(); changePhoto(-1)">❮</div>
+        <div class="viewer-next" onclick="event.stopPropagation(); changePhoto(1)">❯</div>
+        <div class="viewer-rotate" onclick="event.stopPropagation(); rotateImage()">⟳</div>
+    </div>
+
+    <!-- Modal de confirmation de suppression -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h2>Confirmer la suppression</h2>
+            <p>Êtes-vous sûr de vouloir supprimer cette galerie ?</p>
+            <div class="modal-buttons">
+                <button onclick="deleteGallery('{{ gallery.id }}')" class="modal-btn confirm-btn">Supprimer</button>
+                <button onclick="hideDeleteModal()" class="modal-btn cancel-btn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <script>
+        // Variables pour la visionneuse
+        let currentPhotoIndex = 0;
+        let currentRotation = 0;
+        const photos = [
+            {% for image in gallery.images %}
+                "{{ image.image_url }}"{{ "," if not loop.last }}
+            {% endfor %}
+        ];
+
+        function openViewer(index) {
+            currentPhotoIndex = index;
+            currentRotation = 0;
+            const viewerImg = document.getElementById('viewerImage');
+            viewerImg.style.transform = 'rotate(0deg)';
+            viewerImg.src = photos[currentPhotoIndex];
+            document.getElementById('photoViewer').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeViewer() {
+            document.getElementById('photoViewer').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changePhoto(direction) {
+            currentPhotoIndex = (currentPhotoIndex + direction + photos.length) % photos.length;
+            currentRotation = 0;
+            const viewerImg = document.getElementById('viewerImage');
+            viewerImg.style.transform = 'rotate(0deg)';
+            viewerImg.src = photos[currentPhotoIndex];
+        }
+
+        function rotateImage() {
+            currentRotation = (currentRotation + 90) % 360;
+            document.getElementById('viewerImage').style.transform = `rotate(${currentRotation}deg)`;
+        }
+
+        // Gestion des touches du clavier
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('photoViewer').classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeViewer();
+            if (e.key === 'ArrowLeft') changePhoto(-1);
+            if (e.key === 'ArrowRight') changePhoto(1);
+            if (e.key === 'r' || e.key === 'R') rotateImage();
+        });
+
+        function showDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+
+        function hideDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        function deleteGallery(galleryId) {
+            window.location.href = '/delete_gallery/' + galleryId;
+        }
+
+        function setCover(galleryId, imageIndex) {
+            window.location.href = '/set_gallery_cover/' + galleryId + '/' + imageIndex;
+        }
+
+        // Fermer la modal si on clique en dehors
+        window.onclick = function(event) {
+            var modal = document.getElementById('deleteModal');
+            if (event.target == modal) {
+                hideDeleteModal();
+            }
+            if (event.target.classList.contains('viewer')) {
+                closeViewer();
+            }
+        }
+    </script>
 </body>
 </html>

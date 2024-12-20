@@ -13,7 +13,7 @@
         <button id="toggleAudio" class="audio-btn">
             <i class="fas fa-volume-up" id="audioIcon"></i>
         </button>
-        <audio id="backgroundMusic" loop autoplay>
+        <audio id="backgroundMusic" loop>
             <source src="{{ url_for('static', filename='audio/silenziu_-_Corsica.mp3') }}" type="audio/mp3">
             Votre navigateur ne supporte pas l'élément audio.
         </audio>
@@ -23,7 +23,7 @@
         <div class="hero-content">
             <h1>GR20 en Corse : Une Aventure Épique du Nord au Sud en 14 Étapes</h1>
             <p class="hero-description">
-                Le GR20 est l'un des sentiers de randonnée les plus emblématiques d'Europe, traversant la magnifique île de Corse sur environ 180 km, de Calenzana au nord à Conca au sud. Ce parcours, réputé pour sa difficulté technique et ses paysages à couper le souffle, se divise en 14 étapes qui permettent aux randonneurs de découvrir la diversité des terrains corses, allant des crêtes escarpées aux vallées verdoyantes. Chaque journée de marche offre une immersion totale dans la nature, avec des panoramas spectaculaires sur la mer Méditerranée et les sommets environnants.
+                Le GR20 est l'un des sentiers de randonnée les plus emblématiques d'Europe, traversant la magnifique île de Corse sur environ 180 km, de Calenzana au nord à Conca au sud.
             </p>
             <div class="hero-buttons">
                 <a href="{{ url_for('galleries') }}" class="primary-btn">L'aventure en photos</a>
@@ -53,34 +53,24 @@
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('backgroundMusic');
-            const toggleBtn = document.getElementById('toggleAudio');
-            const audioIcon = document.getElementById('audioIcon');
-            let isPlaying = true;  
+        const audio = document.getElementById('backgroundMusic');
+        const toggleBtn = document.getElementById('toggleAudio');
+        const audioIcon = document.getElementById('audioIcon');
 
-            // Set initial icon state
-            audioIcon.className = 'fas fa-volume-up';
-
-            function togglePlay() {
-                if (isPlaying) {
-                    audio.pause();
-                    audioIcon.className = 'fas fa-volume-mute';
-                } else {
-                    audio.play();
-                    audioIcon.className = 'fas fa-volume-up';
-                }
-                isPlaying = !isPlaying;
-            }
-
-            toggleBtn.addEventListener('click', togglePlay);
-
-            // Start playing when possible
-            audio.play().catch(function(error) {
-                // Si la lecture automatique est bloquée, on met à jour l'état
-                isPlaying = false;
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                audioIcon.className = 'fas fa-volume-up';
+            } else {
+                audio.pause();
                 audioIcon.className = 'fas fa-volume-mute';
-            });
+            }
+        }
+
+        toggleBtn.addEventListener('click', togglePlay);
+
+        audio.play().catch(function(error) {
+            console.log("La lecture automatique a été empêchée");
         });
     </script>
 </body>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récit de l'étape - GR20 en Corse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hike-description-page {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ gallery.images[0].image_url if gallery.images }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .description-container {
+            min-height: 100vh;
+            position: relative;
+            padding: 20px;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .description-content {
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto 0;
+            padding: 40px;
+            background: linear-gradient(135deg, 
+                rgba(236, 240, 241, 0.97), 
+                rgba(224, 234, 241, 0.95),
+                rgba(214, 229, 241, 0.93)
+            );
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .description-content h1 {
+            font-size: 2.5em;
+            margin: 0 0 30px 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        .description-textarea {
+            width: 100%;
+            min-height: calc(100vh - 300px);
+            padding: 30px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            resize: none;
+            background: transparent;
+            color: #2d3436;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .description-textarea:focus {
+            outline: none;
+        }
+
+        .button-container {
+            text-align: center;
+            {% if not dev_mode %}
+            display: none;
+            {% endif %}
+        }
+
+        .save-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            box-shadow: 0 2px 8px rgba(41, 128, 185, 0.3);
+        }
+
+        .save-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #2c3e50);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.4);
+        }
+    </style>
+</head>
+<body class="hike-description-page" {% if gallery.images %} style="background-image: url('{{ gallery.images[0].image_url }}');" {% endif %}>
+    <div class="description-container">
+        <a href="{{ url_for('gallery', gallery_id=gallery_id) }}" class="back-link">← Retour à la galerie</a>
+
+        <main class="description-content">
+            <h1>Récit de l'étape</h1>
+            
+            <form class="description-form" method="POST">
+                <textarea name="description" id="description" class="description-textarea" placeholder="Racontez votre randonnée ici...">{{ description if description else '' }}</textarea>
+                <div class="button-container">
+                    <button type="submit" class="save-btn">Enregistrer le récit</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
