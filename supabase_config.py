@@ -15,101 +15,65 @@ class SupabaseStorage:
         self.base_url = os.getenv('SUPABASE_URL')
         self.key = os.getenv('SUPABASE_KEY')
         self.bucket_name = os.getenv('SUPABASE_BUCKET_NAME', 'photos')
-
-        # Configuration du client avec des options spécifiques
-        options = {
-            'headers': {
-                'Authorization': f"Bearer {self.key}",
-                'apikey': self.key
-            },
-            'auto_refresh_token': False,
-            'persist_session': False
+        self.headers = {
+            'Authorization': f"Bearer {self.key}",
+            'apikey': self.key
         }
 
-        try:
-            # Création du client avec les options
-            import supabase
-            supabase = supabase.create_client(self.base_url, self.key, options=options)
-            self.storage = supabase.storage()
-        except Exception as e:
-            print(f"Erreur lors de l'initialisation de Supabase: {str(e)}")
-            # Fallback configuration
-            self.storage = None
-
     def upload_image(self, file_path: str, folder: Optional[str] = None) -> Dict[str, Any]:
-        """Upload an image to Supabase Storage
-        
-        Args:
-            file_path: Path to the image file
-            folder: Optional folder name within the bucket
-            
-        Returns:
-            dict: Upload response including file path and public URL
-            
-        Raises:
-            ValueError: If file is not a valid image
-            Exception: If upload fails
-        """
+        """Upload an image to Supabase Storage"""
         try:
-            # Verify that the file is an image
-            mime = magic.Magic(mime=True)
-            file_type = mime.from_file(file_path)
+            # Vérifier le type de fichier
+            file_type = magic.from_file(file_path, mime=True)
             if not file_type.startswith('image/'):
-                raise ValueError(f"File is not an image. Detected type: {file_type}")
+                raise ValueError(f"Le fichier n'est pas une image : {file_type}")
 
-            # Generate a unique filename with original extension
-            file_ext = os.path.splitext(file_path)[1].lower()
-            unique_filename = f"{uuid.uuid4()}{file_ext}"
-            
-            # Construct the storage path
-            storage_path = f"{folder}/{unique_filename}" if folder else unique_filename
-            
-            # Read the file
-            with open(file_path, 'rb') as f:
-                file_data = f.read()
+            # Redimensionner l'image si nécessaire
+            with Image.open(file_path) as img:
+                # Conserver le format original
+                output = io.BytesIO()
+                img.save(output, format=img.format)
+                file_data = output.getvalue()
 
-            # Upload to Supabase Storage
+            # Construire le chemin de stockage
+            filename = os.path.basename(file_path)
+            unique_filename = f"{uuid.uuid4()}_{filename}"
+            storage_path = unique_filename if not folder else f"{folder}/{unique_filename}"
+
+            # Upload vers Supabase
             url = f"{self.base_url}/storage/v1/object/{self.bucket_name}/{storage_path}"
             response = requests.post(
                 url,
-                headers=self.storage.get_headers(),
+                headers=self.headers,
                 data=file_data
             )
             response.raise_for_status()
 
-            # Construct the public URL
+            # Construire l'URL publique
             public_url = f"{self.base_url}/storage/v1/object/public/{self.bucket_name}/{storage_path}"
             
             return {
-                'path': storage_path,
-                'url': public_url
+                "path": storage_path,
+                "url": public_url
             }
 
         except Exception as e:
-            raise Exception(f"Failed to upload image: {str(e)}")
+            print(f"Erreur lors de l'upload : {str(e)}")
+            raise
 
     def delete_image(self, path: str) -> bool:
-        """Delete an image from Supabase Storage
-        
-        Args:
-            path: Path to the image in storage
-            
-        Returns:
-            bool: True if deletion was successful
-            
-        Raises:
-            Exception: If deletion fails
-        """
+        """Delete an image from Supabase Storage"""
         try:
             url = f"{self.base_url}/storage/v1/object/{self.bucket_name}/{path}"
             response = requests.delete(
                 url,
-                headers=self.storage.get_headers()
+                headers=self.headers
             )
             response.raise_for_status()
             return True
         except Exception as e:
-            raise Exception(f"Failed to delete image: {str(e)}")
+            print(f"Erreur lors de la suppression : {str(e)}")
+            return False
 
 # Create singleton instance
 storage = SupabaseStorage()
