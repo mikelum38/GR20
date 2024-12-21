@@ -301,4 +301,5 @@ def hike_description(gallery_id):
                          dev_mode=DEV_MODE)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # En production sur PythonAnywhere, ces paramètres seront ignorés
+    app.run(host='0.0.0.0', port=8080, debug=False)

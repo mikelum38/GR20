@@ -15,10 +15,26 @@ class SupabaseStorage:
         self.base_url = os.getenv('SUPABASE_URL')
         self.key = os.getenv('SUPABASE_KEY')
         self.bucket_name = os.getenv('SUPABASE_BUCKET_NAME', 'photos')
-        self.headers = {
-            'Authorization': f"Bearer {self.key}",
-            'apikey': self.key
+
+        # Configuration du client avec des options spécifiques
+        options = {
+            'headers': {
+                'Authorization': f"Bearer {self.key}",
+                'apikey': self.key
+            },
+            'auto_refresh_token': False,
+            'persist_session': False
         }
+
+        try:
+            # Création du client avec les options
+            import supabase
+            supabase = supabase.create_client(self.base_url, self.key, options=options)
+            self.storage = supabase.storage()
+        except Exception as e:
+            print(f"Erreur lors de l'initialisation de Supabase: {str(e)}")
+            # Fallback configuration
+            self.storage = None
 
     def upload_image(self, file_path: str, folder: Optional[str] = None) -> Dict[str, Any]:
         """Upload an image to Supabase Storage
@@ -56,7 +72,7 @@ class SupabaseStorage:
             url = f"{self.base_url}/storage/v1/object/{self.bucket_name}/{storage_path}"
             response = requests.post(
                 url,
-                headers=self.headers,
+                headers=self.storage.get_headers(),
                 data=file_data
             )
             response.raise_for_status()
@@ -88,7 +104,7 @@ class SupabaseStorage:
             url = f"{self.base_url}/storage/v1/object/{self.bucket_name}/{path}"
             response = requests.delete(
                 url,
-                headers=self.headers
+                headers=self.storage.get_headers()
             )
             response.raise_for_status()
             return True
