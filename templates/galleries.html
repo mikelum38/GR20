@@ -23,23 +23,59 @@
             padding: 20px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
         }
 
-        .back-link, .create-btn {
+        .page-title {
+            color: white;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            min-width: 200px; /* Pour équilibrer l'espace de chaque côté du titre */
+        }
+
+        .nav-left {
+            justify-content: flex-start;
+        }
+
+        .nav-right {
+            justify-content: flex-end;
+        }
+
+        .back-link, .end-btn, .create-btn {
             text-decoration: none;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px 20px;
-            border-radius: 25px;
-            color: #333;
-            font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
         }
 
-        .back-link:hover, .create-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        .back-link:hover, .end-btn:hover, .create-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         .galleries-grid {
@@ -92,10 +128,18 @@
 </head>
 <body class="galleries-page">
     <nav class="top-nav">
-        <a href="{{ url_for('index') }}" class="back-link">← Retour à l'accueil</a>
-        {% if dev_mode %}
-        <a href="{{ url_for('create_gallery') }}" class="create-btn">Créer une galerie</a>
-        {% endif %}
+        <div class="nav-left">
+            <a href="{{ url_for('index') }}" class="back-link">← Retour à l'accueil</a>
+        </div>
+        
+        <h1 class="page-title">GR20 : L'Odyssée des Montagnes Corses</h1>
+        
+        <div class="nav-right">
+            {% if dev_mode %}
+            <a href="{{ url_for('create_gallery') }}" class="create-btn">Créer une galerie</a>
+            {% endif %}
+            <a href="{{ url_for('end') }}" class="end-btn">Fin →</a>
+        </div>
     </nav>
 
     <div class="galleries-grid">

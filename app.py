@@ -300,6 +300,43 @@ def hike_description(gallery_id):
                          description=gallery.get('story', ''),
                          dev_mode=DEV_MODE)
 
+@app.route('/gallery/<string:gallery_id>/delete_photo/<int:image_index>', methods=['POST'])
+def delete_photo(gallery_id, image_index):
+    if not DEV_MODE:
+        flash('La suppression de photos n\'est possible qu\'en mode développement.', 'error')
+        return redirect(url_for('gallery', gallery_id=gallery_id))
+
+    galleries_data = load_gallery_data()
+    if gallery_id not in galleries_data:
+        flash('Galerie non trouvée.', 'error')
+        return redirect(url_for('galleries'))
+
+    gallery = galleries_data[gallery_id]
+    if 'images' not in gallery or image_index >= len(gallery['images']):
+        flash('Image non trouvée.', 'error')
+        return redirect(url_for('gallery', gallery_id=gallery_id))
+
+    # Supprimer l'image de Supabase
+    image = gallery['images'][image_index]
+    try:
+        # Supprimer l'image originale
+        storage.remove(f"photos/{image['filename']}")
+        # Supprimer la miniature
+        storage.remove(f"thumbnails/{image['filename']}")
+    except Exception as e:
+        print(f"Erreur lors de la suppression des fichiers dans Supabase: {e}")
+
+    # Supprimer l'image de la galerie
+    del gallery['images'][image_index]
+    save_gallery_data(galleries_data)
+    
+    flash('Photo supprimée avec succès.', 'success')
+    return redirect(url_for('gallery', gallery_id=gallery_id))
+
+@app.route('/end')
+def end():
+    return render_template('end.html')
+
 if __name__ == '__main__':
     # En mode développement, on active le debug
     app.run(host='0.0.0.0', port=8080, debug=True)
