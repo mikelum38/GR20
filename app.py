@@ -15,7 +15,7 @@ THUMBNAIL_SIZE = (400, 300)
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'galleries.json')
 
 # Mode développement/production
-DEV_MODE = False  # Force le mode production
+DEV_MODE = False  # Mode développement activé
 
 # Créer le dossier data s'il n'existe pas
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
@@ -301,5 +301,5 @@ def hike_description(gallery_id):
                          dev_mode=DEV_MODE)
 
 if __name__ == '__main__':
-    # En production sur PythonAnywhere, ces paramètres seront ignorés
-    app.run(host='0.0.0.0', port=8080, debug=False)
+    # En mode développement, on active le debug
+    app.run(host='0.0.0.0', port=8080, debug=True)

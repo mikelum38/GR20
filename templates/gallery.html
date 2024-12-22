@@ -10,7 +10,8 @@
         .gallery-page {
             min-height: 100vh;
             padding: 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('{{ url_for('static', filename='images/11-Conca-IPaliri-Panorama-NE.jpg') }}');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                       url('{{ gallery.images[0].image_url if gallery.images else url_for('static', filename='images/11-Conca-IPaliri-Panorama-NE.jpg') }}');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -317,7 +318,10 @@
     {% if dev_mode %}
     <div class="gallery-controls">
         <a href="{{ url_for('edit_gallery', gallery_id=gallery.id) }}" class="control-btn">Modifier</a>
-        <a href="{{ url_for('upload_photos', gallery_id=gallery.id) }}" class="control-btn">Ajouter des photos</a>
+        <form action="{{ url_for('upload_photos', gallery_id=gallery.id) }}" method="POST" enctype="multipart/form-data" style="display: inline;">
+            <input type="file" name="photos" multiple accept="image/*" style="display: none;" id="photo-input">
+            <button type="button" class="control-btn" onclick="document.getElementById('photo-input').click()">Ajouter des photos</button>
+        </form>
         <button onclick="showDeleteModal()" class="control-btn delete-btn">Supprimer</button>
     </div>
     {% endif %}
@@ -419,7 +423,12 @@
         }
 
         function setCover(galleryId, imageIndex) {
-            window.location.href = '/set_gallery_cover/' + galleryId + '/' + imageIndex;
+            // Créer un formulaire temporaire pour faire une requête POST
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = `/gallery/${galleryId}/set_cover/${imageIndex}`;
+            document.body.appendChild(form);
+            form.submit();
         }
 
         // Fermer la modal si on clique en dehors
@@ -432,6 +441,12 @@
                 closeViewer();
             }
         }
+
+        document.getElementById('photo-input').addEventListener('change', function() {
+            if (this.files.length > 0) {
+                this.closest('form').submit();
+            }
+        });
     </script>
 </body>
 </html>
