@@ -239,7 +239,7 @@
     },
     "0cc8b694-a2d2-4cea-92bf-31171a1cda90": {
         "title": "J2, étape 1 : Calenzana - Ortu di u piobbu",
-        "description": "12 km - 1450m D+ - 272m D- : 5h ( 6h30 topo officiel )\r\n",
+        "description": "12 km / +1450m / -272m / 5h ( 6h30 topo officiel ) départ 9h\r\n",
         "date": "2024-09-06",
         "images": [
             {
@@ -632,7 +632,7 @@
     },
     "c0bb9d31-2eec-4e99-b870-e0ceea0fa355": {
         "title": "J3, étape 2 : Ortu di u piobbu - Carrozzu ",
-        "description": "9 km | 894m D+ | 1188m D– : 5h49 ( 7h topo officiel ! )",
+        "description": "9 km / +894m / -1188m / 5h49 ( 7h topo officiel ! ) départ 8h45",
         "date": "2024-09-07",
         "images": [
             {
@@ -801,7 +801,7 @@
     },
     "7ee93e49-629e-4e93-8d43-a031858fe35b": {
         "title": "J4, étape 3 : Carrozzu - Ascu Stagnu",
-        "description": "8 km | 867D+ | 737D– : 4h21 ( 6h10 topo officiel  )",
+        "description": "8 km / +867m / -737m / 4h21 ( 6h10 topo officiel  ) départ 7h05",
         "date": "2024-09-08",
         "images": [
             {
@@ -942,7 +942,7 @@
     },
     "fc1b068d-6965-43de-a816-97673632eb74": {
         "title": "J5, étape 4 : Ascu Stagnu - bergerie de Balonne",
-        "description": "12 km | 1220D+ | 1209D– : 7h50 ( 8h topo officiel  )",
+        "description": "12 km / +1220m / -1209m / 7h50 ( 8h topo officiel  ) départ 8h",
         "date": "2024-09-10",
         "images": [
             {
@@ -1279,7 +1279,7 @@
     },
     "7249bc24-5cb4-40c8-8dc5-f06d736d3165": {
         "title": "J7, étape 6 : Castellu di Vergio - Manganu ",
-        "description": "18km | 642D+ |461D– : 5h04 (+1h46 pause ) ( 5h30 topo ) départ 8h",
+        "description": "18km / +642m / -461m / 5h04 (+1h46 pause ) ( 5h30 topo ) départ 8h",
         "date": "2024-09-11",
         "images": [
             {
@@ -1511,7 +1511,7 @@
     },
     "ecd81f3b-e9f7-4a7f-9e18-10b3cadb4750": {
         "title": "J6, étape 5 : Bergerie de Balonne - Castellu di Vergio",
-        "description": "14 km | 932D+ | 970D– : 6h25 (+1h33 pause ) départ 8h",
+        "description": "14 km / +932m / -970m / 6h25 (+1h33 pause ) départ 8h",
         "date": "2024-09-10",
         "images": [
             {
@@ -1841,7 +1841,7 @@
     },
     "73376f89-6816-47de-8f30-c5f291b8a4c1": {
         "title": "J8, étape 7 : Manganu - Guagno",
-        "description": "15km - 5h09 ( + 2h46 pause )- 454m+ 1294m d- départ 8h",
+        "description": "15km / +454m / -1294m / 5h09 ( + 2h46 pause ) départ 8h",
         "date": "2024-09-12",
         "images": [
             {
@@ -1961,7 +1961,7 @@
     },
     "4e198e17-adec-4c71-9e52-b3d1a29be18b": {
         "title": "J9, étape 8 : village Chiusa - refuge d'Onda",
-        "description": "10 km - 4h15 - 279m d- 1032m d+ départ 12h",
+        "description": "10 km / -279m / +1032m / 4h15 départ 12h",
         "date": "2024-09-13",
         "images": [
             {
@@ -2242,7 +2242,7 @@
     },
     "c1e47b07-6c14-4d81-90ee-2e93590a8440": {
         "title": "J10, étape 9 : Onda - la Halte du Prince ( col de Vizzavona ) ",
-        "description": "15 km - 6h31 (+1h38 pause ) - 954m d+ 1189m d- départ 7h16",
+        "description": "15 km / +954m / -1189m / 6h31 (+1h38 pause ) départ 7h16",
         "date": "2024-09-14",
         "images": [
             {
@@ -2705,7 +2705,7 @@
     },
     "499ecdbd-445f-4f4f-9603-e9d0b8d96001": {
         "title": "J11, étape 10 : Vizzavona - E Capanelle",
-        "description": "14km - 4h39 ( 1h41 de pause ) - 827m d+ 373m d- départ 8h",
+        "description": "14km / +827m / -373m / 4h39 ( 1h41 de pause )  départ 8h",
         "date": "2024-09-15",
         "images": [
             {
@@ -2881,7 +2881,7 @@
     },
     "671c458c-9d8f-4cd1-9010-b19cdb1dca26": {
         "title": "J12, étape  11 : E Capanelle - Prati",
-        "description": "19 km - 5h50 ( 59' de pause ) - 1031m d+ 804m d-\r\ndépart 8h",
+        "description": "19 km / +1031m / -804m / 5h50 ( 59' de pause ) départ 8h",
         "date": "2024-09-16",
         "images": [
             {
@@ -3183,7 +3183,7 @@
     },
     "3b816bb1-f86c-4fa9-80ab-bd7420765486": {
         "title": "J13, étape 12 : Prati - refuge Usciolu",
-        "description": "12 km - 5h02 ( + 29' de pause ) - 875m d+ / 947m d- départ 6h49",
+        "description": "12 km / / +875m / -947m / 5h02 ( + 29' de pause ) départ 6h49",
         "date": "2024-09-17",
         "images": [
             {
@@ -3471,7 +3471,7 @@
     },
     "f5e8a9fd-96ee-4dae-897f-029b40291b7d": {
         "title": "J14, étape 13 : Usciolu - Bergerie I Croci",
-        "description": "14,5 km - 5h20 ( + 2h45 pause ) - 610md+ / 815m d- départ 7h11",
+        "description": "14,5 km / +610m / -815m / 5h20 ( + 2h45 pause ) départ 7h11",
         "date": "2024-09-18",
         "images": [
             {
@@ -3696,7 +3696,7 @@
     },
     "aedbee56-f817-4840-87dc-878c37e4c382": {
         "title": "J15, étape 14 : I Croci - Refuge Paliri",
-        "description": "24km - 9h30 (+ 1h20 pause ) - 1224m d+ / 1717 m d- ? départ 7h30",
+        "description": "24km / +1224m / -1586m - 9h30 (+ 1h20 pause ) départ 7h30",
         "date": "2024-09-19",
         "images": [
             {
@@ -4117,7 +4117,7 @@
     },
     "ace28247-e30b-400d-8ff8-2d1bb5c92d1b": {
         "title": "J16, étape 15 : Paliri - Conca",
-        "description": "14km - 5h43 ( + 1h11 pause ) - 419m d+ / 1241m d- départ 8h42",
+        "description": "14km / +419m / -1241m / 5h43 ( + 1h11 pause ) départ 8h42",
         "date": "2024-09-20",
         "images": [
             {
@@ -5612,9 +5612,16 @@
     },
     "c65341b4-e8be-4b84-b957-b0472991cd3c": {
         "title": "Le parcours en chiffres ",
-        "description": "Les tracés des étapes , avec les cumuls dénivelés et km",
+        "description": "Cumuls : \r\n208 km  /  14322m D+  /  13365m D-\r\n\r\n\r\n",
         "date": "2024-12-23",
         "images": [
+            {
+                "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/c65341b4-e8be-4b84-b957-b0472991cd3c/aba78785-7489-40a7-a6d7-30da48cf46d9_7606c1b3-9a42-4cab-8bcd-00ebc29f3bb0.jpg",
+                "thumbnail_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/c65341b4-e8be-4b84-b957-b0472991cd3c/thumbnails/31c57a08-8b72-46b1-a3c8-a9e6ca8a736d_thumb_7606c1b3-9a42-4cab-8bcd-00ebc29f3bb0.jpg",
+                "filename": "golfe-de-Porto-1200.jpg",
+                "storage_path": "c65341b4-e8be-4b84-b957-b0472991cd3c/aba78785-7489-40a7-a6d7-30da48cf46d9_7606c1b3-9a42-4cab-8bcd-00ebc29f3bb0.jpg",
+                "thumbnail_path": "c65341b4-e8be-4b84-b957-b0472991cd3c/thumbnails/31c57a08-8b72-46b1-a3c8-a9e6ca8a736d_thumb_7606c1b3-9a42-4cab-8bcd-00ebc29f3bb0.jpg"
+            },
             {
                 "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/c65341b4-e8be-4b84-b957-b0472991cd3c/f415539c-b8a3-4ddc-a66d-ef2863658494_20d0e223-f702-4b0e-ad69-7926a95a6363.jpg",
                 "thumbnail_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/c65341b4-e8be-4b84-b957-b0472991cd3c/thumbnails/4c8f2f4a-77a1-4077-8124-bc60ce43cb56_thumb_20d0e223-f702-4b0e-ad69-7926a95a6363.jpg",
@@ -5720,6 +5727,7 @@
                 "storage_path": "c65341b4-e8be-4b84-b957-b0472991cd3c/7afef82a-77bb-4bc2-8088-f298a12cfaf6_e100e03d-5405-419c-ad29-c3fb3c09fcd1.jpeg",
                 "thumbnail_path": "c65341b4-e8be-4b84-b957-b0472991cd3c/thumbnails/373eb372-df7d-4da5-b701-11ccbdbb9877_thumb_e100e03d-5405-419c-ad29-c3fb3c09fcd1.jpeg"
             }
-        ]
+        ],
+        "story": "Les tracés Gps des étapes ( bug sauvegarde des 4 premières ) , avec les dénivelés et km."
     }
 }
