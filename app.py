@@ -18,7 +18,7 @@ THUMBNAIL_SIZE = (400, 300)
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'galleries.json')
 
 # Mode développement/production
-DEV_MODE = True  # Mode développement activé
+DEV_MODE = False  # Mode développement activé
 
 # Créer le dossier data s'il n'existe pas
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
