@@ -3,19 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GR20 en Corse - Une Aventure Épique</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>GR20 en Corse</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            font-family: 'Montserrat', sans-serif;
-        }
-
+ 
         .carousel-container {
             width: 100%;
             height: 100vh;
@@ -44,10 +36,13 @@
             height: 100%;
             object-fit: cover;
         }
-     </style>
-</head>
-<body class="landing-page">
 
+    
+    </style>
+</head>
+
+<body class="landing-page">
+ 
     <div class="carousel-container">
         <div class="carousel-slide active">
             <img src="{{ url_for('static', filename='images/corse1.jpg') }}" alt="GR20 Corse 1">
@@ -58,14 +53,10 @@
         <div class="carousel-slide">
             <img src="{{ url_for('static', filename='images/corse3.jpg') }}" alt="GR20 Corse 3">
         </div>
-        <div class="carousel-slide">
-            <img src="{{ url_for('static', filename='images/corse4.jpg') }}" alt="GR20 Corse 4">
-        </div>
-        <div class="carousel-slide">
-            <img src="{{ url_for('static', filename='images/corse5.jpg') }}" alt="GR20 Corse 5">
-        </div>
- 
- 
+    </div>
+
+
+    <div class="fullscreen-hero">
         <div class="hero-content">
             <h1>GR20 en Corse : Une Aventure Épique du Nord au Sud en 14 Étapes</h1>
             <p class="hero-description">
@@ -80,19 +71,7 @@
             <div class="scroll-arrow"></div>
         </div>
     </div>
-
-    <div class="audio-control">
-        <button id="toggleAudio" class="audio-btn">
-            <i class="fas fa-volume-up" id="audioIcon"></i>
-        </button>
-        <audio id="backgroundMusic" loop>
-            <source src="{{ url_for('static', filename='audio/silenziu_-_Corsica.mp3') }}" type="audio/mp3">
-            Votre navigateur ne supporte pas l'élément audio.
-        </audio>
-    </div>
- //   div class="fullscreen-hero">
-      //   /div> 
-
+    
     <main class="home-content">
         <section class="features">
             <div class="feature">
@@ -110,9 +89,9 @@
         </section>
     </main>
 
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Carousel functionality
             const slides = document.querySelectorAll('.carousel-slide');
             let currentSlide = 0;
 
@@ -132,26 +111,9 @@
             // Start the carousel
             showSlide(0);
 
-            const audio = document.getElementById('backgroundMusic');
-            const toggleBtn = document.getElementById('toggleAudio');
-            const audioIcon = document.getElementById('audioIcon');
-
-            function togglePlay() {
-                if (audio.paused) {
-                    audio.play();
-                    audioIcon.className = 'fas fa-volume-up';
-                } else {
-                    audio.pause();
-                    audioIcon.className = 'fas fa-volume-mute';
-                }
-            }
-
-            toggleBtn.addEventListener('click', togglePlay);
-
-            audio.play().catch(function(error) {
-                console.log("La lecture automatique a été empêchée");
-            });
         });
+    
+        
     </script>
 </body>
 </html>

@@ -7,6 +7,9 @@ import uuid
 from supabase_config import storage
 
 app = Flask(__name__)
+app.static_folder = 'static'
+app.template_folder = 'templates'
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.secret_key = 'votre_clé_secrète_ici'
 
 # Configuration
@@ -15,7 +18,7 @@ THUMBNAIL_SIZE = (400, 300)
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'galleries.json')
 
 # Mode développement/production
-DEV_MODE = False  # Mode développement activé
+DEV_MODE = True  # Mode développement activé
 
 # Créer le dossier data s'il n'existe pas
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
@@ -54,7 +57,10 @@ def parse_date(date_str):
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    try:
+        return render_template('index.html')  # Changé de newindex.html à index.html
+    except Exception as e:
+        return f"Erreur: {str(e)}", 500
 
 @app.route('/galleries')
 def galleries():
@@ -333,10 +339,19 @@ def delete_photo(gallery_id, image_index):
     flash('Photo supprimée avec succès.', 'success')
     return redirect(url_for('gallery', gallery_id=gallery_id))
 
+@app.route('/gr20')
+def gr20():
+    return render_template('gr20.html')
+
 @app.route('/end')
 def end():
     return render_template('end.html')
 
+@app.route('/test')
+def test():
+    return "Test OK!"
+
 if __name__ == '__main__':
-    # En mode développement, on active le debug
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    print("=== DÉMARRAGE DE L'APPLICATION ===")
+    app.debug = True
+    app.run(host='0.0.0.0', port=9090)

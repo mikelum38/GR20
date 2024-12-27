@@ -36,8 +36,6 @@ body {
 .fullscreen-hero {
     position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-                url('https://images.unsplash.com/photo-1533387520709-752d83de3630?q=80&w=2074&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -48,6 +46,7 @@ body {
     color: white;
 }
 
+
 .home-content {
     position: relative;
     background-color: var(--background-color);
@@ -55,17 +54,45 @@ body {
 }
 
 .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 1000px;
     text-align: center;
     padding: 0 2rem;
-    z-index: 1;
+    color: white;
+    z-index: 2;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.hero-content .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .hero-description {
