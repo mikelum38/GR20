@@ -130,6 +130,7 @@
     <nav class="top-nav">
         <div class="nav-left">
             <a href="{{ url_for('index') }}" class="back-link">← Retour à l'accueil</a>
+            <a href="{{ url_for('end') }}" class="end-btn">Fin →</a>
         </div>
         
         <h1 class="page-title">GR20 : L'Odyssée des Montagnes Corses</h1>
@@ -138,7 +139,6 @@
             {% if dev_mode %}
             <a href="{{ url_for('create_gallery') }}" class="create-btn">Créer une galerie</a>
             {% endif %}
-            <a href="{{ url_for('end') }}" class="end-btn">Fin →</a>
         </div>
     </nav>
 
