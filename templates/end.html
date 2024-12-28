@@ -18,6 +18,41 @@
             position: relative;
         }
 
+        .main-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .text-container {
+            flex: 0 0 400px;
+            color: white;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
         .home-link {
             position: absolute;
             top: 20px;
@@ -40,44 +75,6 @@
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
             transform: translateY(-2px);
-        }
-
-        .main-container {
-            display: flex;
-            width: 100%;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
-        }
-
-        .video-container {
-            flex: 1;
-            height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        video {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: 90vh;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            object-fit: contain;
-        }
-
-        .text-container {
-            flex: 0 0 400px;
-            color: white;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         h1 {
@@ -106,33 +103,29 @@
             font-size: 1.3em;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
-          /* Ajout des styles responsive */
-          @media screen and (max-width: 1024px) {
+
+        @media screen and (max-width: 1024px) {
             .main-container {
                 flex-direction: column;
-                height: auto;
-                padding: 80px 1rem 2rem 1rem;
+                padding: 60px 15px 20px 15px;
+                gap: 20px;
             }
 
             .video-container {
-                height: auto;
-                min-height: 300px;
                 width: 100%;
-                margin-bottom: 1rem;
+                margin-top: 20px;
             }
 
             video {
                 width: 100%;
-                height: auto;
-                min-height: 300px;
-                object-fit: contain;
+                border-radius: 8px;
             }
 
             .text-container {
-                flex: none;
                 width: 100%;
+                margin-top: 20px;
+                flex: none;
                 max-width: 100%;
-                box-sizing: border-box;
             }
 
             h1 {
@@ -148,56 +141,24 @@
             }
         }
 
-        /* Ajustements pour les très petits écrans */
         @media screen and (max-width: 480px) {
             .main-container {
-                padding: 70px 0.5rem 1rem 0.5rem;
+                padding: 50px 10px 15px 10px;
             }
 
             .home-link {
-                font-size: 0.9em;
+                top: 10px;
+                left: 10px;
                 padding: 8px 15px;
-            }
-
-            h1 {
-                font-size: 1.8em;
+                font-size: 0.9em;
             }
 
             .text-container {
                 padding: 1.5rem;
             }
 
-            video {
-                border-radius: 5px;
-            }
-
-            .video-container {
-                min-height: 200px;
-            }
-
-            video {
-                min-height: 200px;
-            }
-        }
-
-        /* Optimisation de l'orientation paysage sur mobile */
-        @media screen and (max-height: 500px) and (orientation: landscape) {
-            .main-container {
-                flex-direction: row;
-                padding: 70px 1rem 1rem 1rem;
-            }
-
-            .video-container {
-                flex: 1;
-                margin-bottom: 0;
-            }
-
-            .text-container {
-                flex: 0 0 40%;
-            }
-
-            video {
-                max-height: 80vh;
+            h1 {
+                font-size: 1.8em;
             }
         }
     </style>
