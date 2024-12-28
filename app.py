@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import os
 import json
 from datetime import datetime
-from PIL import Image
+from PIL import Image, ExifTags
 import uuid
 from supabase_config import storage
 
@@ -18,7 +18,8 @@ THUMBNAIL_SIZE = (400, 300)
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'galleries.json')
 
 # Mode développement/production
-DEV_MODE = False  # Mode développement activé
+DEV_MODE = False
+  # Mode développement activé
 
 # Créer le dossier data s'il n'existe pas
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
@@ -161,6 +162,26 @@ def upload_photos(gallery_id):
                 try:
                     # Sauvegarder temporairement le fichier
                     file.save(temp_path)
+                    
+                    # Corriger l'orientation de l'image
+                    with Image.open(temp_path) as img:
+                        try:
+                            for orientation in ExifTags.TAGS.keys():
+                                if ExifTags.TAGS[orientation] == 'Orientation':
+                                    break
+                            
+                            exif = dict(img._getexif().items())
+                            if exif[orientation] == 3:
+                                img = img.rotate(180, expand=True)
+                            elif exif[orientation] == 6:
+                                img = img.rotate(270, expand=True)
+                            elif exif[orientation] == 8:
+                                img = img.rotate(90, expand=True)
+                            
+                            img.save(temp_path)
+                        except (AttributeError, KeyError, IndexError):
+                            # Pas de données EXIF ou pas d'orientation
+                            pass
                     
                     # Upload vers Supabase
                     result = storage.upload_image(temp_path, folder=gallery_id)
@@ -338,6 +359,30 @@ def delete_photo(gallery_id, image_index):
     
     flash('Photo supprimée avec succès.', 'success')
     return redirect(url_for('gallery', gallery_id=gallery_id))
+
+@app.route('/gallery/<string:gallery_id>/reorder', methods=['POST'])
+def reorder_photos(gallery_id):
+    try:
+        new_order = request.json['newOrder']
+        galleries = load_gallery_data()
+        
+        if gallery_id not in galleries:
+            return jsonify({'error': 'Galerie introuvable'}), 404
+            
+        gallery = galleries[gallery_id]
+        current_images = gallery['images']
+        reordered_images = []
+        
+        # Réorganiser les images selon le nouvel ordre
+        for index in new_order:
+            reordered_images.append(current_images[int(index)])
+        
+        gallery['images'] = reordered_images
+        save_gallery_data(galleries)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/gr20')
 def gr20():

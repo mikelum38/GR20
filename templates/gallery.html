@@ -153,9 +153,19 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            background: white;
+            background: #f8f9fa;
             transition: transform 0.3s ease;
             cursor: pointer;
+            padding-bottom: 75%; /* Ratio 4:3 */
+        }
+
+        .gallery-item.dragging {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+
+        .gallery-item.drag-over {
+            border: 2px dashed #007bff;
         }
 
         .gallery-item:hover {
@@ -163,8 +173,11 @@
         }
 
         .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
@@ -172,16 +185,15 @@
         .set-cover-btn {
             position: absolute;
             bottom: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            background-color: rgba(0, 123, 255, 0.8);
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
-            border-radius: 4px;
+            padding: 5px 10px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 0.8em;
-            opacity: 0;
-            transition: opacity 0.3s;
+            z-index: 2;
         }
 
         .delete-photo-btn {
@@ -190,94 +202,119 @@
             right: 10px;
             width: 24px;
             height: 24px;
-            background-color: rgba(220, 53, 69, 0.8);
-            color: white;
+            background: rgba(255, 0, 0, 0.7);
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
+            z-index: 2;
         }
 
         .delete-photo-btn::before,
         .delete-photo-btn::after {
             content: '';
             position: absolute;
-            width: 14px;
-            height: 2px;
-            background-color: white;
-            transform: rotate(45deg);
+            width: 2px;
+            height: 12px;
+            background: white;
+            top: 50%;
+            left: 50%;
+        }
+
+        .delete-photo-btn::before {
+            transform: translate(-50%, -50%) rotate(45deg);
         }
 
         .delete-photo-btn::after {
-            transform: rotate(-45deg);
-        }
-
-        .gallery-item:hover .set-cover-btn,
-        .gallery-item:hover .delete-photo-btn {
-            opacity: 1;
+            transform: translate(-50%, -50%) rotate(-45deg);
         }
 
         /* Styles pour la visionneuse */
-        .viewer {
-            display: none;
+        .photo-viewer {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .viewer.active {
-            display: flex;
-            align-items: center;
+            display: none;
             justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
 
-        .viewer img {
-            max-height: 100%;
-            max-width: 100%;
-            height: auto;
-            width: auto;
-            transition: transform 0.3s ease;
+        .photo-viewer.active {
+            display: flex;
         }
 
-        .viewer-prev, .viewer-next, .viewer-rotate {
-            position: fixed;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            padding: 20px;
-            z-index: 2001;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
+        .viewer-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
         }
 
-        .viewer-prev, .viewer-next {
+        .viewer-content img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .photo-viewer .nav-button {
+            position: absolute;
             top: 50%;
             transform: translateY(-50%);
-        }
-
-        .viewer-rotate {
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
             padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            transition: background 0.3s;
+            z-index: 1001;
         }
 
-        .viewer-prev {
+        .photo-viewer .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .photo-viewer .prev {
             left: 20px;
         }
 
-        .viewer-next {
+        .photo-viewer .next {
             right: 20px;
+        }
+
+        .photo-viewer .close {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+            z-index: 1010;
+        }
+
+        .photo-viewer .close:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .photo-viewer .close::before {
+            content: '←';
+            display: block;
+            transform: translateY(-2px);
         }
 
         .modal {
@@ -355,10 +392,15 @@
     </div>
     {% endif %}
 
-    <div class="photos-grid">
+    <div class="photos-grid" id="photos-grid">
         {% if gallery.images %}
             {% for image in gallery.images %}
-                <div class="gallery-item" onclick="openViewer({{ loop.index0 }})">
+                <div class="gallery-item" 
+                     onclick="openViewer({{ loop.index0 }})"
+                     {% if dev_mode %}
+                     draggable="true"
+                     data-index="{{ loop.index0 }}"
+                     {% endif %}>
                     <img src="{{ image.thumbnail_url }}" alt="Photo {{ loop.index }}" loading="lazy">
                     {% if dev_mode %}
                         <form action="{{ url_for('set_gallery_cover', gallery_id=gallery.id, image_index=loop.index0) }}" method="post" style="display: inline;" onclick="event.stopPropagation();">
@@ -376,11 +418,13 @@
     </div>
 
     <!-- Visionneuse de photos -->
-    <div class="viewer" id="photoViewer" onclick="closeViewer()">
-        <img id="viewerImage" src="" alt="Photo en plein écran" onclick="event.stopPropagation();">
-        <div class="viewer-prev" onclick="event.stopPropagation(); changePhoto(-1)">❮</div>
-        <div class="viewer-next" onclick="event.stopPropagation(); changePhoto(1)">❯</div>
-        <div class="viewer-rotate" onclick="event.stopPropagation(); rotateImage()">⟳</div>
+    <div class="photo-viewer" id="photoViewer" onclick="closeViewer()">
+        <div class="viewer-content">
+            <img id="viewerImage" src="" alt="Photo en plein écran" onclick="event.stopPropagation();">
+        </div>
+        <div class="nav-button prev" onclick="event.stopPropagation(); changePhoto(-1)">❮</div>
+        <div class="nav-button next" onclick="event.stopPropagation(); changePhoto(1)">❯</div>
+        <div class="close" onclick="event.stopPropagation(); closeViewer()" title="Retour à la galerie"></div>
     </div>
 
     <!-- Modal de confirmation de suppression -->
@@ -397,52 +441,117 @@
 
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <script>
-        // Variables pour la visionneuse
         let currentPhotoIndex = 0;
-        let currentRotation = 0;
-        const photos = [
-            {% for image in gallery.images %}
-                "{{ image.image_url }}"{{ "," if not loop.last }}
-            {% endfor %}
-        ];
+        const photos = {{ gallery.images|tojson|safe }};
+        {% if dev_mode %}
+        const photosGrid = document.getElementById('photos-grid');
+        let draggedItem = null;
+        let originalIndex = null;
 
-        function openViewer(index) {
-            currentPhotoIndex = index;
-            currentRotation = 0;
-            const viewerImg = document.getElementById('viewerImage');
-            viewerImg.style.transform = 'rotate(0deg)';
-            viewerImg.src = photos[currentPhotoIndex];
-            document.getElementById('photoViewer').classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Fonctions pour le drag & drop
+        function handleDragStart(e) {
+            draggedItem = this;
+            originalIndex = parseInt(this.getAttribute('data-index'));
+            this.classList.add('dragging');
+            e.stopPropagation();
         }
 
-        function closeViewer() {
-            document.getElementById('photoViewer').classList.remove('active');
-            document.body.style.overflow = 'auto';
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.classList.remove('drag-over');
+            });
+            e.stopPropagation();
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        function handleDragEnter(e) {
+            this.classList.add('drag-over');
+            e.stopPropagation();
+        }
+
+        function handleDragLeave(e) {
+            this.classList.remove('drag-over');
+            e.stopPropagation();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (draggedItem === this) return;
+            
+            const items = [...photosGrid.children];
+            const newIndex = parseInt(this.getAttribute('data-index'));
+            
+            // Réorganiser les éléments visuellement
+            if (newIndex < originalIndex) {
+                this.parentNode.insertBefore(draggedItem, this);
+            } else {
+                this.parentNode.insertBefore(draggedItem, this.nextSibling);
+            }
+            
+            // Mettre à jour les indices
+            const newOrder = [...document.querySelectorAll('.gallery-item')]
+                .map(item => parseInt(item.getAttribute('data-index')));
+            
+            // Envoyer le nouvel ordre au serveur
+            fetch(`/gallery/{{ gallery.id }}/reorder`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ newOrder: newOrder })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error('Erreur lors de la réorganisation:', data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+            
+            // Mettre à jour les indices des éléments
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.setAttribute('data-index', index);
+            });
+        }
+
+        // Ajouter les écouteurs d'événements pour le drag & drop
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('dragstart', handleDragStart);
+            item.addEventListener('dragend', handleDragEnd);
+            item.addEventListener('dragover', handleDragOver);
+            item.addEventListener('dragenter', handleDragEnter);
+            item.addEventListener('dragleave', handleDragLeave);
+            item.addEventListener('drop', handleDrop);
+        });
+        {% endif %}
+        function openViewer(index) {
+            currentPhotoIndex = index;
+            const viewer = document.getElementById('photoViewer');
+            const img = document.getElementById('viewerImage');
+            
+            img.src = photos[index].image_url;
+            viewer.classList.add('active');
         }
 
         function changePhoto(direction) {
             currentPhotoIndex = (currentPhotoIndex + direction + photos.length) % photos.length;
-            currentRotation = 0;
-            const viewerImg = document.getElementById('viewerImage');
-            viewerImg.style.transform = 'rotate(0deg)';
-            viewerImg.src = photos[currentPhotoIndex];
-        }
-
-        function rotateImage() {
-            currentRotation = (currentRotation + 90) % 360;
-            document.getElementById('viewerImage').style.transform = `rotate(${currentRotation}deg)`;
-        }
-
-        // Gestion des touches du clavier
-        document.addEventListener('keydown', function(e) {
-            if (!document.getElementById('photoViewer').classList.contains('active')) return;
+            const img = document.getElementById('viewerImage');
             
-            if (e.key === 'Escape') closeViewer();
-            if (e.key === 'ArrowLeft') changePhoto(-1);
-            if (e.key === 'ArrowRight') changePhoto(1);
-            if (e.key === 'r' || e.key === 'R') rotateImage();
-        });
+            img.src = photos[currentPhotoIndex].image_url;
+        }
+
+        function closeViewer() {
+            document.getElementById('photoViewer').classList.remove('active');
+        }
 
         function showDeleteModal() {
             document.getElementById('deleteModal').style.display = 'block';
@@ -456,22 +565,20 @@
             window.location.href = '/delete_gallery/' + galleryId;
         }
 
-        function setCover(galleryId, imageIndex) {
-            // Créer un formulaire temporaire pour faire une requête POST
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = `/gallery/${galleryId}/set_cover/${imageIndex}`;
-            document.body.appendChild(form);
-            form.submit();
-        }
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('photoViewer').classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeViewer();
+            if (e.key === 'ArrowLeft') changePhoto(-1);
+            if (e.key === 'ArrowRight') changePhoto(1);
+        });
 
-        // Fermer la modal si on clique en dehors
         window.onclick = function(event) {
             var modal = document.getElementById('deleteModal');
             if (event.target == modal) {
                 hideDeleteModal();
             }
-            if (event.target.classList.contains('viewer')) {
+            if (event.target.classList.contains('photo-viewer')) {
                 closeViewer();
             }
         }
