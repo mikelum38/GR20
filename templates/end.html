@@ -106,26 +106,26 @@
             font-size: 1.3em;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
-               /* Ajout des styles responsive */
-               @media screen and (max-width: 1024px) {
+          /* Ajout des styles responsive */
+          @media screen and (max-width: 1024px) {
             .main-container {
                 flex-direction: column;
                 height: auto;
-                min-height: 100vh;
                 padding: 80px 1rem 2rem 1rem;
-                gap: 1rem;
             }
 
             .video-container {
                 height: auto;
+                min-height: 300px;
                 width: 100%;
                 margin-bottom: 1rem;
             }
 
             video {
-                height: auto;
-                max-height: 50vh;
                 width: 100%;
+                height: auto;
+                min-height: 300px;
+                object-fit: contain;
             }
 
             .text-container {
@@ -169,6 +169,14 @@
 
             video {
                 border-radius: 5px;
+            }
+
+            .video-container {
+                min-height: 200px;
+            }
+
+            video {
+                min-height: 200px;
             }
         }
 
