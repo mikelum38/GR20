@@ -70,15 +70,73 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
-        .hero-buttons .primary-btn {
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .primary-btn {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #ffffff;
-            color: #000000;
+            font-size: 1.1em;
+            color: #000;
+            background: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: 600;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            background: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            color: #000;
+        }
+
+        .primary-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation subtile au survol */
+        .primary-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .primary-btn:hover::after {
+            left: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .primary-btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .primary-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
         }
 
         /* Styles pour mobile */
@@ -132,8 +190,7 @@
             font-size: 1.1rem;
             color: #666;
         }
-
-     </style>
+    </style>
 </head>
 <body class="landing-page">
 
