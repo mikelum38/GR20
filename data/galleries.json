@@ -2,7 +2,7 @@
     "62518409-4860-4c47-bad1-a5939fe1e2ac": {
         "title": "J1 : en mer pour l'île Rousse",
         "date": "2024-09-05",
-        "description": "Après un départ depuis l'Isère , sous les trombes d'eau , le soleil refait son apparition dans le sud , et c'est avec un beau coucher de soleil sur la presqu'ile du mandrier , que nous débutons la traversée . ",
+        "description": "Après un départ sous les trombes d'eau depuis l'Isère , le soleil refait son apparition dans le sud , et c'est avec un beau coucher de soleil sur la presqu'ile du mandrier , que nous débutons la traversée depuis Toulon. ",
         "images": [
             {
                 "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/bb4946d2-e233-4dcf-b743-af5b4480a361.jpg",
@@ -10,13 +10,6 @@
                 "filename": "IMG_20240905_195858.jpg",
                 "storage_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/bb4946d2-e233-4dcf-b743-af5b4480a361.jpg",
                 "thumbnail_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/thumbnails/4cc149fd-4d22-407e-8971-2cb3c9088c5a.jpg"
-            },
-            {
-                "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/4c15d364-fd66-4816-bc45-dd4b367147e3.jpg",
-                "thumbnail_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/thumbnails/3c7b8ae7-06c3-40fc-8f14-ef5b56115b40.jpg",
-                "filename": "IMG_20240905_200126.jpg",
-                "storage_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/4c15d364-fd66-4816-bc45-dd4b367147e3.jpg",
-                "thumbnail_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/thumbnails/3c7b8ae7-06c3-40fc-8f14-ef5b56115b40.jpg"
             },
             {
                 "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/500c479f-6ae3-4b1b-abc6-69f313be01a6.jpg",
@@ -213,6 +206,13 @@
                 "filename": "IMG_20240905_200132.jpg",
                 "storage_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/bd130944-6c75-4ea5-bf70-2b17ba62d18a.jpg",
                 "thumbnail_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/thumbnails/2d2d3ae9-8071-420c-9015-c2aefb7f1e32.jpg"
+            },
+            {
+                "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/4c15d364-fd66-4816-bc45-dd4b367147e3.jpg",
+                "thumbnail_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/thumbnails/3c7b8ae7-06c3-40fc-8f14-ef5b56115b40.jpg",
+                "filename": "IMG_20240905_200126.jpg",
+                "storage_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/4c15d364-fd66-4816-bc45-dd4b367147e3.jpg",
+                "thumbnail_path": "62518409-4860-4c47-bad1-a5939fe1e2ac/thumbnails/3c7b8ae7-06c3-40fc-8f14-ef5b56115b40.jpg"
             },
             {
                 "image_url": "https://lnvhtjspobizlbqkanie.supabase.co/storage/v1/object/public/photos/62518409-4860-4c47-bad1-a5939fe1e2ac/81e7632c-dd56-4d1e-9dae-18060c07e8be.jpg",
@@ -632,7 +632,7 @@
     },
     "c0bb9d31-2eec-4e99-b870-e0ceea0fa355": {
         "title": "J3, étape 2 : Ortu di u piobbu - Carrozzu ",
-        "description": "9 km / +894m / -1188m / 5h49 ( 7h topo officiel ! ) départ 8h45",
+        "description": "9 km / +894m / -1188m / 5h49 ( 7h topo officiel ) départ 8h45",
         "date": "2024-09-07",
         "images": [
             {
@@ -1961,7 +1961,7 @@
     },
     "4e198e17-adec-4c71-9e52-b3d1a29be18b": {
         "title": "J9, étape 8 : village Chiusa - refuge d'Onda",
-        "description": "10 km / -279m / +1032m / 4h15 départ 12h",
+        "description": "10 km / -279m / +1032m / 4h15 (+26' de pause ) départ 12h après la pluie",
         "date": "2024-09-13",
         "images": [
             {
@@ -2705,7 +2705,7 @@
     },
     "499ecdbd-445f-4f4f-9603-e9d0b8d96001": {
         "title": "J11, étape 10 : Vizzavona - E Capanelle",
-        "description": "14km / +827m / -373m / 4h39 ( 1h41 de pause )  départ 8h",
+        "description": "14km / +827m / -373m / 4h39 ( +1h41 de pause )  départ 8h",
         "date": "2024-09-15",
         "images": [
             {
@@ -2881,7 +2881,7 @@
     },
     "671c458c-9d8f-4cd1-9010-b19cdb1dca26": {
         "title": "J12, étape  11 : E Capanelle - Prati",
-        "description": "19 km / +1031m / -804m / 5h50 ( 59' de pause ) départ 8h",
+        "description": "19 km / +1031m / -804m / 5h50 ( +59' de pause ) départ 8h",
         "date": "2024-09-16",
         "images": [
             {
@@ -3183,7 +3183,7 @@
     },
     "3b816bb1-f86c-4fa9-80ab-bd7420765486": {
         "title": "J13, étape 12 : Prati - refuge Usciolu",
-        "description": "12 km / / +875m / -947m / 5h02 ( + 29' de pause ) départ 6h49",
+        "description": "12 km / +875m / -947m / 5h02 ( + 29' de pause ) départ 6h49",
         "date": "2024-09-17",
         "images": [
             {
