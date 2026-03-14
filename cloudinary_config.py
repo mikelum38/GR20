@@ -4,14 +4,15 @@ import cloudinary.api
 from dotenv import load_dotenv
 import os
 
+# Charger les variables locales pour le développement
 load_dotenv()
 
 def initialize_cloudinary():
     """Initialize Cloudinary with credentials from environment variables"""
     cloudinary.config(
-        cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
-        api_key=os.getenv('CLOUDINARY_API_KEY'),
-        api_secret=os.getenv('CLOUDINARY_API_SECRET')
+        cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME') or os.environ.get('CLOUDINARY_CLOUD_NAME'),
+        api_key=os.getenv('CLOUDINARY_API_KEY') or os.environ.get('CLOUDINARY_API_KEY'),
+        api_secret=os.getenv('CLOUDINARY_API_SECRET') or os.environ.get('CLOUDINARY_API_SECRET')
     )
 
 def upload_image(file_path, public_id=None, folder=None):

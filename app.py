@@ -4,13 +4,18 @@ import json
 from datetime import datetime
 from PIL import Image, ExifTags
 import uuid
+from dotenv import load_dotenv
 from cloudinary_config import initialize_cloudinary, upload_image, delete_image
 
 app = Flask(__name__)
 app.static_folder = 'static'
 app.template_folder = 'templates'
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.secret_key = 'votre_clé_secrète_ici'
+
+# Charger les variables locales pour le développement
+load_dotenv()
+
+app.secret_key = os.getenv('FLASK_SECRET_KEY') or os.environ.get('FLASK_SECRET_KEY', 'votre_clé_secrète_ici')
 
 # Configuration
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -21,8 +26,7 @@ DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'ga
 initialize_cloudinary()
 
 # Mode développement/production
-DEV_MODE = False
-  # Mode développement activé
+DEV_MODE = (os.getenv('DEV_MODE') or os.environ.get('DEV_MODE', 'False')).lower() == 'true'
 
 # Créer le dossier data s'il n'existe pas
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
