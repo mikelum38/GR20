@@ -392,5 +392,5 @@ def test():
 
 if __name__ == '__main__':
     print("=== DÉMARRAGE DE L'APPLICATION ===")
-    app.debug = True
-    app.run(host='0.0.0.0', port=9090)
+    # Ne pas activer debug en production et ne pas hardcoder le port
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
