@@ -18,66 +18,100 @@
             position: relative;
         }
 
-        .home-link {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .home-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-
         .main-container {
             display: flex;
+            flex-direction: column;
             width: 100%;
-            height: 100vh;
+            padding: 60px 15px 20px 15px;
             align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
         }
 
         .video-container {
-            flex: 1;
-            height: 90vh;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         video {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: 90vh;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 100%;
+            max-height: 80vh;
             object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .text-container {
-            flex: 0 0 400px;
-            color: white;
-            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+            padding: 1.5rem;
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            text-decoration: none;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .home-link:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media screen and (max-width: 768px) {
+            .video-container {
+                width: 90%;
+            }
+
+            video {
+                max-height: 70vh;
+            }
+
+            .home-link {
+                top: 15px;
+                left: 15px;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-container {
+                padding: 50px 10px 15px 10px;
+            }
+
+            .video-container {
+                width: 100%;
+            }
+
+            .home-link {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
         }
 
         h1 {
@@ -109,13 +143,11 @@
     </style>
 </head>
 <body class="end-page">
-    <nav>
-        <a href="{{ url_for('index') }}" class="home-link">← Retour à l'accueil</a>
-    </nav>
+    <a href="{{ url_for('index') }}" class="home-link">← Retour à l'accueil</a>
     
     <div class="main-container">
         <div class="video-container">
-            <video controls>
+            <video controls playsinline>
                 <source src="{{ url_for('static', filename='images/corsica.mp4') }}" type="video/mp4">
                 Votre navigateur ne supporte pas la lecture de vidéos.
             </video>

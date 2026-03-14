@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 from PIL import Image, ExifTags
 import uuid
-from supabase_config import storage
+from cloudinary_config import initialize_cloudinary, upload_image, delete_image
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -16,6 +16,9 @@ app.secret_key = 'votre_clé_secrète_ici'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 THUMBNAIL_SIZE = (400, 300)
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'galleries.json')
+
+# Initialiser Cloudinary
+initialize_cloudinary()
 
 # Mode développement/production
 DEV_MODE = False
@@ -183,22 +186,15 @@ def upload_photos(gallery_id):
                             # Pas de données EXIF ou pas d'orientation
                             pass
                     
-                    # Upload vers Supabase
-                    result = storage.upload_image(temp_path, folder=gallery_id)
+                    # Upload vers Cloudinary (avec le dossier comme folder)
+                    result = upload_image(temp_path, folder=gallery_id)
                     
-                    # Créer et uploader la miniature
-                    with Image.open(temp_path) as img:
-                        img.thumbnail(THUMBNAIL_SIZE)
-                        img.save(thumb_path)
-                        thumb_result = storage.upload_image(thumb_path, folder=f"{gallery_id}/thumbnails")
-                    
-                    # Ajouter les URLs à la galerie
+                    # Ajouter les URLs à la galerie (structure simplifiée)
                     gallery['images'].append({
                         'image_url': result['url'],
-                        'thumbnail_url': thumb_result['url'],
+                        'thumbnail_url': result['thumbnail_url'],  # Généré dynamiquement par Cloudinary
                         'filename': file.filename,
-                        'storage_path': result['path'],
-                        'thumbnail_path': thumb_result['path']
+                        'public_id': result['public_id']  # ID Cloudinary pour la suppression
                     })
                     
                 except Exception as e:
@@ -209,8 +205,6 @@ def upload_photos(gallery_id):
                     # Nettoyer les fichiers temporaires
                     if os.path.exists(temp_path):
                         os.remove(temp_path)
-                    if os.path.exists(thumb_path):
-                        os.remove(thumb_path)
         
         save_gallery_data(galleries)
         flash('Photos ajoutées avec succès', 'success')
@@ -234,13 +228,11 @@ def delete_gallery(gallery_id):
 
         gallery = galleries[gallery_id]
         
-        # Supprimer toutes les images de Supabase
+        # Supprimer toutes les images de Cloudinary
         for image in gallery['images']:
             try:
-                if 'storage_path' in image:
-                    storage.delete_image(image['storage_path'])
-                if 'thumbnail_path' in image:
-                    storage.delete_image(image['thumbnail_path'])
+                if 'public_id' in image:
+                    delete_image(image['public_id'])
             except Exception as e:
                 print(f"Erreur lors de la suppression de l'image {image.get('filename', 'unknown')}: {str(e)}")
         
@@ -343,15 +335,13 @@ def delete_photo(gallery_id, image_index):
         flash('Image non trouvée.', 'error')
         return redirect(url_for('gallery', gallery_id=gallery_id))
 
-    # Supprimer l'image de Supabase
+    # Supprimer l'image de Cloudinary
     image = gallery['images'][image_index]
     try:
-        # Supprimer l'image originale
-        storage.remove(f"photos/{image['filename']}")
-        # Supprimer la miniature
-        storage.remove(f"thumbnails/{image['filename']}")
+        if 'public_id' in image:
+            delete_image(image['public_id'])
     except Exception as e:
-        print(f"Erreur lors de la suppression des fichiers dans Supabase: {e}")
+        print(f"Erreur lors de la suppression de l'image dans Cloudinary: {e}")
 
     # Supprimer l'image de la galerie
     del gallery['images'][image_index]

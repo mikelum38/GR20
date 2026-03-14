@@ -34,16 +34,38 @@ python app.py
 
 ## Configuration
 
-L'application nécessite un compte Supabase pour le stockage des images. Configurez les variables suivantes dans votre fichier `.env` :
+L'application nécessite un compte Cloudinary pour le stockage des images. Configurez les variables suivantes dans votre fichier `.env` :
 
-- `SUPABASE_URL` : URL de votre projet Supabase
-- `SUPABASE_KEY` : Clé d'API Supabase
-- `SUPABASE_BUCKET_NAME` : Nom du bucket pour le stockage des images
+- `CLOUDINARY_CLOUD_NAME` : Nom de votre cloud Cloudinary
+- `CLOUDINARY_API_KEY` : Clé d'API Cloudinary
+- `CLOUDINARY_API_SECRET` : Clé secrète Cloudinary
+
+## Structure des données
+
+Les galeries sont stockées dans `data/galleries.json` avec la structure suivante :
+```json
+{
+  "gallery_id": {
+    "title": "Titre de la galerie",
+    "date": "YYYY-MM-DD",
+    "description": "Description de l'étape",
+    "images": [
+      {
+        "image_url": "URL de l'image",
+        "thumbnail_url": "URL de la miniature",
+        "filename": "nom_du_fichier.jpg",
+        "public_id": "ID_public_cloudinary"
+      }
+    ]
+  }
+}
+
+
 
 ## Technologies utilisées
 
 - Flask (Backend)
-- Supabase (Stockage)
+- Cloudinary (Stockage d'images)
 - HTML/CSS/JavaScript (Frontend)
 - Lightbox.js (Galerie photos)
 
