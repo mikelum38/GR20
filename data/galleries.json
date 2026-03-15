@@ -5,6 +5,18 @@
         "date": "2024-09-05",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486208/IMG_20240905_192423_qxjibg.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486208/IMG_20240905_192423_qxjibg.jpg",
+                "filename": "IMG_20240905_192423_qxjibg",
+                "public_id": "IMG_20240905_192423_qxjibg"
+            },
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486207/IMG_20240905_184050_tg2g7s.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486207/IMG_20240905_184050_tg2g7s.jpg",
+                "filename": "IMG_20240905_184050_tg2g7s",
+                "public_id": "IMG_20240905_184050_tg2g7s"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486206/IMG_20240905_125307_vs8hzh.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486206/IMG_20240905_125307_vs8hzh.jpg",
                 "filename": "IMG_20240905_125307_vs8hzh",
@@ -35,12 +47,6 @@
                 "public_id": "IMG_20240905_173101_xpiwc5"
             },
             {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486207/IMG_20240905_184050_tg2g7s.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486207/IMG_20240905_184050_tg2g7s.jpg",
-                "filename": "IMG_20240905_184050_tg2g7s",
-                "public_id": "IMG_20240905_184050_tg2g7s"
-            },
-            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486207/IMG_20240905_184204_tmyuxr.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486207/IMG_20240905_184204_tmyuxr.jpg",
                 "filename": "IMG_20240905_184204_tmyuxr",
@@ -63,12 +69,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486207/IMG_20240905_192314_m4a8mo.jpg",
                 "filename": "IMG_20240905_192314_m4a8mo",
                 "public_id": "IMG_20240905_192314_m4a8mo"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486208/IMG_20240905_192423_qxjibg.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486208/IMG_20240905_192423_qxjibg.jpg",
-                "filename": "IMG_20240905_192423_qxjibg",
-                "public_id": "IMG_20240905_192423_qxjibg"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486208/IMG_20240905_192957_tjeeof.jpg",
@@ -210,6 +210,12 @@
         "date": "2024-09-06",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486309/IMG_20240906_090548_dafgec.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486309/IMG_20240906_090548_dafgec.jpg",
+                "filename": "IMG_20240906_090548_dafgec",
+                "public_id": "IMG_20240906_090548_dafgec"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486302/IMG_20240906_070045_ukajib.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486302/IMG_20240906_070045_ukajib.jpg",
                 "filename": "IMG_20240906_070045_ukajib",
@@ -274,12 +280,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486308/IMG_20240906_090505_vmyxkk.jpg",
                 "filename": "IMG_20240906_090505_vmyxkk",
                 "public_id": "IMG_20240906_090505_vmyxkk"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486309/IMG_20240906_090548_dafgec.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486309/IMG_20240906_090548_dafgec.jpg",
-                "filename": "IMG_20240906_090548_dafgec",
-                "public_id": "IMG_20240906_090548_dafgec"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486310/IMG_20240906_090624_okevvn.jpg",
@@ -542,6 +542,12 @@
         "date": "2024-09-07",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486379/IMG_20240907_092024_zqwyv8.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486379/IMG_20240907_092024_zqwyv8.jpg",
+                "filename": "IMG_20240907_092024_zqwyv8",
+                "public_id": "IMG_20240907_092024_zqwyv8"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486378/IMG_20240907_090519_cm6zlr.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486378/IMG_20240907_090519_cm6zlr.jpg",
                 "filename": "IMG_20240907_090519_cm6zlr",
@@ -552,12 +558,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486378/IMG_20240907_091903_a8akhw.jpg",
                 "filename": "IMG_20240907_091903_a8akhw",
                 "public_id": "IMG_20240907_091903_a8akhw"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486379/IMG_20240907_092024_zqwyv8.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486379/IMG_20240907_092024_zqwyv8.jpg",
-                "filename": "IMG_20240907_092024_zqwyv8",
-                "public_id": "IMG_20240907_092024_zqwyv8"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486380/IMG_20240907_092146_fmxorq.jpg",
@@ -682,6 +682,18 @@
         "date": "2024-09-08",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486431/IMG_20240908_071916_pwx0df.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486431/IMG_20240908_071916_pwx0df.jpg",
+                "filename": "IMG_20240908_071916_pwx0df",
+                "public_id": "IMG_20240908_071916_pwx0df"
+            },
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486430/IMG_20240908_071846_fytm7c.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486430/IMG_20240908_071846_fytm7c.jpg",
+                "filename": "IMG_20240908_071846_fytm7c",
+                "public_id": "IMG_20240908_071846_fytm7c"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486424/IMG_20240908_060922_mdwyrx.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486424/IMG_20240908_060922_mdwyrx.jpg",
                 "filename": "IMG_20240908_060922_mdwyrx",
@@ -710,18 +722,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486429/IMG_20240908_070514_dkcy00.jpg",
                 "filename": "IMG_20240908_070514_dkcy00",
                 "public_id": "IMG_20240908_070514_dkcy00"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486430/IMG_20240908_071846_fytm7c.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486430/IMG_20240908_071846_fytm7c.jpg",
-                "filename": "IMG_20240908_071846_fytm7c",
-                "public_id": "IMG_20240908_071846_fytm7c"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486431/IMG_20240908_071916_pwx0df.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486431/IMG_20240908_071916_pwx0df.jpg",
-                "filename": "IMG_20240908_071916_pwx0df",
-                "public_id": "IMG_20240908_071916_pwx0df"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486432/IMG_20240908_073037_pathq1.jpg",
@@ -791,6 +791,12 @@
         "description": "Étape 5 du GR20 - Tighjettu - Manganu",
         "date": "2024-09-09",
         "images": [
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486512/IMG_20240909_124555_qulkfk.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486512/IMG_20240909_124555_qulkfk.jpg",
+                "filename": "IMG_20240909_124555_qulkfk",
+                "public_id": "IMG_20240909_124555_qulkfk"
+            },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486479/IMG_20240909_062420_pjhqoo.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486479/IMG_20240909_062420_pjhqoo.jpg",
@@ -972,12 +978,6 @@
                 "public_id": "IMG_20240909_124552_ii3lf3"
             },
             {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486512/IMG_20240909_124555_qulkfk.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486512/IMG_20240909_124555_qulkfk.jpg",
-                "filename": "IMG_20240909_124555_qulkfk",
-                "public_id": "IMG_20240909_124555_qulkfk"
-            },
-            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486513/IMG_20240909_125235_uxgqp1.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486513/IMG_20240909_125235_uxgqp1.jpg",
                 "filename": "IMG_20240909_125235_uxgqp1",
@@ -1069,6 +1069,12 @@
         "date": "2024-09-10",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486546/IMG_20240910_084014_zkxgnq.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486546/IMG_20240910_084014_zkxgnq.jpg",
+                "filename": "IMG_20240910_084014_zkxgnq",
+                "public_id": "IMG_20240910_084014_zkxgnq"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486536/IMG_20240910_064023_aujg3u.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486536/IMG_20240910_064023_aujg3u.jpg",
                 "filename": "IMG_20240910_064023_aujg3u",
@@ -1115,12 +1121,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486545/IMG_20240910_082824_ehpabp.jpg",
                 "filename": "IMG_20240910_082824_ehpabp",
                 "public_id": "IMG_20240910_082824_ehpabp"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486546/IMG_20240910_084014_zkxgnq.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486546/IMG_20240910_084014_zkxgnq.jpg",
-                "filename": "IMG_20240910_084014_zkxgnq",
-                "public_id": "IMG_20240910_084014_zkxgnq"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486547/IMG_20240910_084021_na4rsa.jpg",
@@ -1347,6 +1347,12 @@
         "date": "2024-09-11",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486610/IMG_20240911_100405_wz2pgt.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486610/IMG_20240911_100405_wz2pgt.jpg",
+                "filename": "IMG_20240911_100405_wz2pgt",
+                "public_id": "IMG_20240911_100405_wz2pgt"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486600/IMG_20240911_073527_wb92vu.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486600/IMG_20240911_073527_wb92vu.jpg",
                 "filename": "IMG_20240911_073527_wb92vu",
@@ -1393,12 +1399,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486610/IMG_20240911_100221_cz9rxx.jpg",
                 "filename": "IMG_20240911_100221_cz9rxx",
                 "public_id": "IMG_20240911_100221_cz9rxx"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486610/IMG_20240911_100405_wz2pgt.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486610/IMG_20240911_100405_wz2pgt.jpg",
-                "filename": "IMG_20240911_100405_wz2pgt",
-                "public_id": "IMG_20240911_100405_wz2pgt"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486611/IMG_20240911_101514_w8gm5i.jpg",
@@ -1541,6 +1541,12 @@
         "date": "2024-09-12",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486655/IMG_20240912_082039_i13px1.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486655/IMG_20240912_082039_i13px1.jpg",
+                "filename": "IMG_20240912_082039_i13px1",
+                "public_id": "IMG_20240912_082039_i13px1"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486650/IMG_20240912_074257_hgllf8.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486650/IMG_20240912_074257_hgllf8.jpg",
                 "filename": "IMG_20240912_074257_hgllf8",
@@ -1563,12 +1569,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486654/IMG_20240912_082034_yq7ik5.jpg",
                 "filename": "IMG_20240912_082034_yq7ik5",
                 "public_id": "IMG_20240912_082034_yq7ik5"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486655/IMG_20240912_082039_i13px1.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486655/IMG_20240912_082039_i13px1.jpg",
-                "filename": "IMG_20240912_082039_i13px1",
-                "public_id": "IMG_20240912_082039_i13px1"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486657/IMG_20240912_082053_hhqohx.jpg",
@@ -1638,6 +1638,12 @@
         "description": "10 km / -279m / +1032m / 4h15 (+26' de pause ) départ 12h après la pluie",
         "date": "2024-09-13",
         "images": [
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486743/IMG_20240913_163508_dtbr0l.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486743/IMG_20240913_163508_dtbr0l.jpg",
+                "filename": "IMG_20240913_163508_dtbr0l",
+                "public_id": "IMG_20240913_163508_dtbr0l"
+            },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486705/IMG_20240913_083421_nqd5ci.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486705/IMG_20240913_083421_nqd5ci.jpg",
@@ -1789,12 +1795,6 @@
                 "public_id": "IMG_20240913_163459_jnlenj"
             },
             {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486743/IMG_20240913_163508_dtbr0l.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486743/IMG_20240913_163508_dtbr0l.jpg",
-                "filename": "IMG_20240913_163508_dtbr0l",
-                "public_id": "IMG_20240913_163508_dtbr0l"
-            },
-            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486744/IMG_20240913_163603_t1yxls.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486744/IMG_20240913_163603_t1yxls.jpg",
                 "filename": "IMG_20240913_163603_t1yxls",
@@ -1874,6 +1874,12 @@
         "description": "15 km / +954m / -1189m / 6h31 (+1h38 pause ) départ 7h16",
         "date": "2024-09-14",
         "images": [
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486801/IMG_20240914_091652_niocka.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486801/IMG_20240914_091652_niocka.jpg",
+                "filename": "IMG_20240914_091652_niocka",
+                "public_id": "IMG_20240914_091652_niocka"
+            },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486775/IMG_20240914_062700_erxjpm.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486775/IMG_20240914_062700_erxjpm.jpg",
@@ -1981,12 +1987,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486800/IMG_20240914_091647_ibew5w.jpg",
                 "filename": "IMG_20240914_091647_ibew5w",
                 "public_id": "IMG_20240914_091647_ibew5w"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486801/IMG_20240914_091652_niocka.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486801/IMG_20240914_091652_niocka.jpg",
-                "filename": "IMG_20240914_091652_niocka",
-                "public_id": "IMG_20240914_091652_niocka"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486803/IMG_20240914_091658_lxhbr3.jpg",
@@ -2261,6 +2261,12 @@
         "date": "2024-09-15",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486881/IMG_20240915_101615_fncfhq.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486881/IMG_20240915_101615_fncfhq.jpg",
+                "filename": "IMG_20240915_101615_fncfhq",
+                "public_id": "IMG_20240915_101615_fncfhq"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486870/IMG_20240915_070613_dhbzec.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486870/IMG_20240915_070613_dhbzec.jpg",
                 "filename": "IMG_20240915_070613_dhbzec",
@@ -2295,12 +2301,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486879/IMG_20240915_092828_gft3wl.jpg",
                 "filename": "IMG_20240915_092828_gft3wl",
                 "public_id": "IMG_20240915_092828_gft3wl"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486881/IMG_20240915_101615_fncfhq.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486881/IMG_20240915_101615_fncfhq.jpg",
-                "filename": "IMG_20240915_101615_fncfhq",
-                "public_id": "IMG_20240915_101615_fncfhq"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486883/IMG_20240915_101634_jnndnw.jpg",
@@ -2413,6 +2413,12 @@
         "date": "2024-09-16",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486927/IMG_20240916_072140_u2m8bo.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486927/IMG_20240916_072140_u2m8bo.jpg",
+                "filename": "IMG_20240916_072140_u2m8bo",
+                "public_id": "IMG_20240916_072140_u2m8bo"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486922/IMG_20240916_071001_yjcy7w.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486922/IMG_20240916_071001_yjcy7w.jpg",
                 "filename": "IMG_20240916_071001_yjcy7w",
@@ -2429,12 +2435,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486925/IMG_20240916_072132_liujze.jpg",
                 "filename": "IMG_20240916_072132_liujze",
                 "public_id": "IMG_20240916_072132_liujze"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486927/IMG_20240916_072140_u2m8bo.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486927/IMG_20240916_072140_u2m8bo.jpg",
-                "filename": "IMG_20240916_072140_u2m8bo",
-                "public_id": "IMG_20240916_072140_u2m8bo"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486929/IMG_20240916_074248_hd3vmg.jpg",
@@ -2667,6 +2667,12 @@
         "date": "2024-09-17",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487010/IMG_20240917_074052_zffy4i.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487010/IMG_20240917_074052_zffy4i.jpg",
+                "filename": "IMG_20240917_074052_zffy4i",
+                "public_id": "IMG_20240917_074052_zffy4i"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773486996/IMG_20240917_061120_bfaldl.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773486996/IMG_20240917_061120_bfaldl.jpg",
                 "filename": "IMG_20240917_061120_bfaldl",
@@ -2725,12 +2731,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487009/IMG_20240917_074036_f5robv.jpg",
                 "filename": "IMG_20240917_074036_f5robv",
                 "public_id": "IMG_20240917_074036_f5robv"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487010/IMG_20240917_074052_zffy4i.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487010/IMG_20240917_074052_zffy4i.jpg",
-                "filename": "IMG_20240917_074052_zffy4i",
-                "public_id": "IMG_20240917_074052_zffy4i"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487012/IMG_20240917_074101_dg0haf.jpg",
@@ -2909,6 +2909,12 @@
         "date": "2024-09-18",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487082/IMG_20240918_072319_sjx3ee.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487082/IMG_20240918_072319_sjx3ee.jpg",
+                "filename": "IMG_20240918_072319_sjx3ee",
+                "public_id": "IMG_20240918_072319_sjx3ee"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487076/IMG_20240918_070916_bxoj6b.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487076/IMG_20240918_070916_bxoj6b.jpg",
                 "filename": "IMG_20240918_070916_bxoj6b",
@@ -2931,12 +2937,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487080/IMG_20240918_072315_qjjmor.jpg",
                 "filename": "IMG_20240918_072315_qjjmor",
                 "public_id": "IMG_20240918_072315_qjjmor"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487082/IMG_20240918_072319_sjx3ee.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487082/IMG_20240918_072319_sjx3ee.jpg",
-                "filename": "IMG_20240918_072319_sjx3ee",
-                "public_id": "IMG_20240918_072319_sjx3ee"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487083/IMG_20240918_072329_bttu1i.jpg",
@@ -3096,6 +3096,12 @@
         "description": "24km / +1224m / -1586m - 9h30 (+ 1h20 pause ) départ 7h30",
         "date": "2024-09-19",
         "images": [
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487216/IMG_20240919_165032_kq5cxc.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487216/IMG_20240919_165032_kq5cxc.jpg",
+                "filename": "IMG_20240919_165032_kq5cxc",
+                "public_id": "IMG_20240919_165032_kq5cxc"
+            },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487147/IMG_20240919_065218_masdvg.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487147/IMG_20240919_065218_masdvg.jpg",
@@ -3325,12 +3331,6 @@
                 "public_id": "IMG_20240919_165028_dav6la"
             },
             {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487216/IMG_20240919_165032_kq5cxc.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487216/IMG_20240919_165032_kq5cxc.jpg",
-                "filename": "IMG_20240919_165032_kq5cxc",
-                "public_id": "IMG_20240919_165032_kq5cxc"
-            },
-            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487218/IMG_20240919_172800_lkjhqe.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487218/IMG_20240919_172800_lkjhqe.jpg",
                 "filename": "IMG_20240919_172800_lkjhqe",
@@ -3453,6 +3453,12 @@
         "date": "2024-09-20",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487279/IMG_20240920_071449_qb66w2.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487279/IMG_20240920_071449_qb66w2.jpg",
+                "filename": "IMG_20240920_071449_qb66w2",
+                "public_id": "IMG_20240920_071449_qb66w2"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487262/IMG_20240920_071041_jq3xdo.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487262/IMG_20240920_071041_jq3xdo.jpg",
                 "filename": "IMG_20240920_071041_jq3xdo",
@@ -3505,12 +3511,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487278/IMG_20240920_071440_tfypnn.jpg",
                 "filename": "IMG_20240920_071440_tfypnn",
                 "public_id": "IMG_20240920_071440_tfypnn"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487279/IMG_20240920_071449_qb66w2.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487279/IMG_20240920_071449_qb66w2.jpg",
-                "filename": "IMG_20240920_071449_qb66w2",
-                "public_id": "IMG_20240920_071449_qb66w2"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487281/IMG_20240920_073600_gso9os.jpg",
@@ -3821,6 +3821,12 @@
         "date": "2024-09-21",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487425/IMG_20240921_150251_kr4pas.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487425/IMG_20240921_150251_kr4pas.jpg",
+                "filename": "IMG_20240921_150251_kr4pas",
+                "public_id": "IMG_20240921_150251_kr4pas"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487381/IMG_20240921_080937_lhjnwi.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487381/IMG_20240921_080937_lhjnwi.jpg",
                 "filename": "IMG_20240921_080937_lhjnwi",
@@ -3957,12 +3963,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487423/IMG_20240921_150242_hut64u.jpg",
                 "filename": "IMG_20240921_150242_hut64u",
                 "public_id": "IMG_20240921_150242_hut64u"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487425/IMG_20240921_150251_kr4pas.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487425/IMG_20240921_150251_kr4pas.jpg",
-                "filename": "IMG_20240921_150251_kr4pas",
-                "public_id": "IMG_20240921_150251_kr4pas"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487427/IMG_20240921_150300_tcl3ko.jpg",
@@ -4255,6 +4255,12 @@
         "date": "2024-09-22",
         "images": [
             {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487555/IMG_20240922_120352_jgarzf.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487555/IMG_20240922_120352_jgarzf.jpg",
+                "filename": "IMG_20240922_120352_jgarzf",
+                "public_id": "IMG_20240922_120352_jgarzf"
+            },
+            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487516/IMG_20240922_072518_bsrwko.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487516/IMG_20240922_072518_bsrwko.jpg",
                 "filename": "IMG_20240922_072518_bsrwko",
@@ -4387,12 +4393,6 @@
                 "public_id": "IMG_20240922_120236_n4isoo"
             },
             {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487555/IMG_20240922_120352_jgarzf.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487555/IMG_20240922_120352_jgarzf.jpg",
-                "filename": "IMG_20240922_120352_jgarzf",
-                "public_id": "IMG_20240922_120352_jgarzf"
-            },
-            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773487557/IMG_20240922_120359_r0mibd.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773487557/IMG_20240922_120359_r0mibd.jpg",
                 "filename": "IMG_20240922_120359_r0mibd",
@@ -4402,10 +4402,16 @@
         "story": "Les conditions météo ont fait que nous n'avons pas pu faire un seul sommet sur le parcours ( même l'indudine , ou nous sommes passé au pied , était dans les nuages , ça n'avait pas d'interet ) .\r\nMais ... ce n'est que partie remise , car je reviendrai , non pas pour refaire le GR20 , mais pour faire ... toutes les variantes alpines , sur un mode à la journée ou sur deux jours , en alternance avec des journées repos et visites , farniente et playa .\r\nEn effet , il y a pas mal de points d'entrée au massif , accessibles en ... voiture .\r\nC'est donc le concept d'un futur projet , qui aura lieu en juillet ou aout , afin d'être sur d'avoir du beau temps pour gravir ces sommets dans de bonnes conditions ( il suffira de viser les bons créneaux météos , sans contraintes de réservations de refuges ) .\r\nSur les pas de Aude Tondereau ( je te pique tes photos pour l'illustration 😄 ) qui a réalisé ceux ci début septembre .\r\nVoici les objectifs :\r\n✅️Monte Cinto ( mon coéquipier l'a fait lors de l'étape 4 , moi j'étais entamé physiquement et mentalement par la montée au col des éboulis dans la tempête , il faisait très froid et j'ai préfèrer assurer la descente ) .\r\n✅️Paglia Orba ( peut être ) \r\n✅️Monte Rotondo ( variante alpine du GR20 ; le bad weather était annoncé en journée , on n'a pas osé prendre le risque)\r\n✅️Monte d'Oro ( variante alpine du GR20 ; on manquait de temps l'étape était déjà assez difficile ; dommage il faisait beau ce jour la )\r\n✅️Monte Renoso ( variante alpine du GR20 ; mauvais temps le jour ou nous sommes passé , c'était injouable )\r\n✅️Monte Incundine : on est passé 100m sous le sommet , à revoir par beau temps dégagé ; la variante alpine ( beaucoup plus courte que par maltaza et croci ) était indiquée : fermée ?"
     },
     "J18": {
-          "title": "Le parcours en chiffres ",
-          "description": "Cumuls : \r\n208 km  /  14322m D+  /  13365m D-\r\n\r\n\r\n",
-          "date": "2024-12-23",
+        "title": "Le parcours en chiffres ",
+        "description": "Cumuls : \r\n208 km  /  14322m D+  /  13365m D-\r\n\r\n\r\n",
+        "date": "2024-12-23",
         "images": [
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497355/8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497355/8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr.jpg",
+                "filename": "8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr",
+                "public_id": "8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr"
+            },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497354/62f797a6-b720-4ce5-bdca-286527a1dc96_8dd7053f-9ef2-445f-991b-85548e93b3e2_uanmsk.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497354/62f797a6-b720-4ce5-bdca-286527a1dc96_8dd7053f-9ef2-445f-991b-85548e93b3e2_uanmsk.jpg",
@@ -4459,12 +4465,6 @@
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497355/9728c8c7-cf4d-442d-8e54-b7c02ebf68a4_2d74f9f8-3d4e-4f90-b75f-807cd9b64d5c_gtomzz.jpg",
                 "filename": "9728c8c7-cf4d-442d-8e54-b7c02ebf68a4_2d74f9f8-3d4e-4f90-b75f-807cd9b64d5c_gtomzz",
                 "public_id": "9728c8c7-cf4d-442d-8e54-b7c02ebf68a4_2d74f9f8-3d4e-4f90-b75f-807cd9b64d5c_gtomzz"
-            },
-            {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497355/8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497355/8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr.jpg",
-                "filename": "8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr",
-                "public_id": "8efd3e15-3e25-4c42-81a8-a33977197a7f_e06a277e-7193-4386-bdfb-e67d8f360063_wowjqr"
             },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497355/7afef82a-77bb-4bc2-8088-f298a12cfaf6_e100e03d-5405-419c-ad29-c3fb3c09fcd1_mr7wol.jpg",
@@ -4527,12 +4527,19 @@
                 "public_id": "ddc84837-a790-4b41-bc9d-9fa2d34b4fc9_e4e90ef9-9872-4c68-93ee-c0bdbb14df8b_v7lih3"
             }
         ],
-    "story": "Tous les tracés Gps de toutes les étapes ( bug sauvegarde des 4 premières ) , avec les dénivelés et km."    },
-        "J19": {
+        "story": "Tous les tracés Gps de toutes les étapes ( bug sauvegarde des 4 premières ) , avec les dénivelés et km."
+    },
+    "J19": {
         "title": "Et la suite ?",
         "description": "Revenir et faire les deux étapes que l'on a du shunter , réaliser les variantes alpines , et gravir certains sommets ...",
         "date": "2024-09-22",
         "images": [
+            {
+                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497360/d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio.jpg",
+                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497360/d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio.jpg",
+                "filename": "d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio",
+                "public_id": "d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio"
+            },
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497358/4e9372a9-4744-4d5c-838d-534a4d01d7f8_f6f87e55-9788-4ace-b00d-45edd1efe91f_tsvucx.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497358/4e9372a9-4744-4d5c-838d-534a4d01d7f8_f6f87e55-9788-4ace-b00d-45edd1efe91f_tsvucx.jpg",
@@ -4558,25 +4565,19 @@
                 "public_id": "e92848e9-cfc0-4ade-9644-df1609d00823_aeec1fa8-0ee9-4a4f-9835-1c79d1405c3f_h6y37k"
             },
             {
-                "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497360/d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio.jpg",
-                "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497360/d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio.jpg",
-                "filename": "d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio",
-                "public_id": "d85ce828-dc6a-4fa8-a0e8-195b67ab39ca_c428bc96-8432-4172-bfbe-85bdfed87b75_lkckio"
-            },
-            {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497360/d585f66d-77e0-42df-8346-784ee718d21d_bbfab6ae-8c43-416f-8f51-f98c12f298ca_kvqgzk.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497360/d585f66d-77e0-42df-8346-784ee718d21d_bbfab6ae-8c43-416f-8f51-f98c12f298ca_kvqgzk.jpg",
                 "filename": "d585f66d-77e0-42df-8346-784ee718d21d_bbfab6ae-8c43-416f-8f51-f98c12f298ca_kvqgzk",
                 "public_id": "d585f66d-77e0-42df-8346-784ee718d21d_bbfab6ae-8c43-416f-8f51-f98c12f298ca_kvqgzk"
             }
         ],
-     "story": "Les conditions météo ont fait que nous n'avons pas pu faire un seul sommet sur le parcours ( même l'indudine , ou nous sommes passé au pied , était dans les nuages , ça n'avait pas d'interet ) .\r\nMais ... ce n'est que partie remise , car je reviendrai , non pas pour refaire le GR20 , mais pour faire ... toutes les variantes alpines , sur un mode à la journée ou sur deux jours , en alternance avec des journées repos et visites , farniente et playa .\r\nEn effet , il y a pas mal de points d'entrée au massif , accessibles en ... voiture .\r\nC'est donc le concept d'un futur projet , qui aura lieu en juillet ou aout , afin d'être sur d'avoir du beau temps pour gravir ces sommets dans de bonnes conditions ( il suffira de viser les bons créneaux météos , sans contraintes de réservations de refuges ) .\r\nSur les pas de Aude Tondereau ( je te pique tes photos pour l'illustration 😄 ) qui a réalisé ceux ci début septembre .\r\nVoici les objectifs :\r\n✅️Monte Cinto ( mon coéquipier l'a fait lors de l'étape 4 , moi j'étais entamé physiquement et mentalement par la montée au col des éboulis dans la tempête , il faisait très froid et j'ai préfèrer assurer la descente ) .\r\n✅️Paglia Orba ( peut être ) \r\n✅️Monte Rotondo ( variante alpine du GR20 ; le bad weather était annoncé en journée , on n'a pas osé prendre le risque)\r\n✅️Monte d'Oro ( variante alpine du GR20 ; on manquait de temps l'étape était déjà assez difficile ; dommage il faisait beau ce jour la )\r\n✅️Monte Renoso ( variante alpine du GR20 ; mauvais temps le jour ou nous sommes passé , c'était injouable )\r\n✅️Monte Incundine : on est passé 100m sous le sommet , à revoir par beau temps dégagé ; la variante alpine ( beaucoup plus courte que par maltaza et croci ) était indiquée : fermée ?"
-   },
+        "story": "Les conditions météo ont fait que nous n'avons pas pu faire un seul sommet sur le parcours ( même l'indudine , ou nous sommes passé au pied , était dans les nuages , ça n'avait pas d'interet ) .\r\nMais ... ce n'est que partie remise , car je reviendrai , non pas pour refaire le GR20 , mais pour faire ... toutes les variantes alpines , sur un mode à la journée ou sur deux jours , en alternance avec des journées repos et visites , farniente et playa .\r\nEn effet , il y a pas mal de points d'entrée au massif , accessibles en ... voiture .\r\nC'est donc le concept d'un futur projet , qui aura lieu en juillet ou aout , afin d'être sur d'avoir du beau temps pour gravir ces sommets dans de bonnes conditions ( il suffira de viser les bons créneaux météos , sans contraintes de réservations de refuges ) .\r\nSur les pas de Aude Tondereau ( je te pique tes photos pour l'illustration 😄 ) qui a réalisé ceux ci début septembre .\r\nVoici les objectifs :\r\n✅️Monte Cinto ( mon coéquipier l'a fait lors de l'étape 4 , moi j'étais entamé physiquement et mentalement par la montée au col des éboulis dans la tempête , il faisait très froid et j'ai préfèrer assurer la descente ) .\r\n✅️Paglia Orba ( peut être ) \r\n✅️Monte Rotondo ( variante alpine du GR20 ; le bad weather était annoncé en journée , on n'a pas osé prendre le risque)\r\n✅️Monte d'Oro ( variante alpine du GR20 ; on manquait de temps l'étape était déjà assez difficile ; dommage il faisait beau ce jour la )\r\n✅️Monte Renoso ( variante alpine du GR20 ; mauvais temps le jour ou nous sommes passé , c'était injouable )\r\n✅️Monte Incundine : on est passé 100m sous le sommet , à revoir par beau temps dégagé ; la variante alpine ( beaucoup plus courte que par maltaza et croci ) était indiquée : fermée ?"
+    },
     "J20": {
-       "title": "epilogue",
+        "title": "epilogue",
         "description": "Le bilan de cette épopée à travers l'île magique .",
         "date": "2024-09-22",
-         "images": [
+        "images": [
             {
                 "image_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/v1773497360/07df3806-cf7c-42ca-89ff-a02be99b1388_f32f230c-ad51-4df5-8f92-84ff379fcede_clrlvl.jpg",
                 "thumbnail_url": "https://res.cloudinary.com/dvhkgvemu/image/upload/w_300,h_300,c_fill/v1773497360/07df3806-cf7c-42ca-89ff-a02be99b1388_f32f230c-ad51-4df5-8f92-84ff379fcede_clrlvl.jpg",
@@ -4818,7 +4819,6 @@
                 "public_id": "ebee790a-06bf-47c9-9411-0508ed4817dd_a948f442-5b40-40f4-b676-629e21a1cf75_wgxxlm"
             }
         ],
-    "story": "Nous sommes parti le vendredi 6.\r\nLe lundi 9 on prenait la tempête au col des éboulis pour l'étape 4 du Cinto , le vent nous couchait sur les crêtes.\r\nL'étape la plus difficile du parcours , est \"corsé\" par ce vent tempétueux ( aéroports fermés ce jour là ).\r\nEnsuite le jeudi 12 la tempête encore , avec pluie brouillard , grêle sur les arêtes , a manganu.\r\nUn groupe d'ecossais nous donne la soluce : descendre , descendre jusqu'à guagno ou un gîte nous attend. On sèche nos affaires après 5h sous la pluie.\r\nLe lendemain on remonte par un sentier sauvage en forêt , jusqu'à onda , sautant l'étape pietra piana ou c'est la grêle la haut.\r\nPartis après la pluie on évite celle ci ce vendredi 13.\r\nOn continue , mais le froid l'humidité nous poursuit et les deux étapes a prati puis isciolu dans un inconfort total ( une assiette de pâte avalée en vitesse en plein vent glacial sur la terrasse a isciolu 🫣) entament notre moral.\r\nAvant de descendre sur vizzavonne et le sud , c'est la neige que nous rencontrons sur un sol gelé, au Bocca avant la grande descente vers le début du sud.\r\nNous nous retournons a ce col à 2100m, pour jeter un dernier regard vers les montagnes du nord : celles ci sont toutes blanches , recouvertes de neige 🫣.\r\nNous n'aurions pas pu passer , à quelques jours près ( le copain a réussi a gravir le cinto ce jour là ).\r\nMercredi 18 j'attrape une douleur au tendon d'Achille droit , je souffre pour atteindre la bergerie de croci ( meilleure étape du parcours ) et ne peut atteindre asinau.\r\nJeudi 19 on double pour aller jusqu'à paliri mais ce sera un chemin de croix pour moi, la douleur reste présente .\r\nA bavella j'en bave !\r\nNous attrapons la pluie a midi et j'arrive extenué a 18h20 a paliri.\r\nC'était notre second jour sous la pluie seulement en ayant jonglé avec la météo et ajustant nos étapes .\r\nReste la dernière étape vers conca.\r\nLa descente est longue longue , et ça remonte encore dans la caillasse .\r\nJe termine avec la douleur pendant toute l'étape encore mais je passe.\r\nJe vois 1400m d- a ma montre..\r\nFinalement nous touchons au but dans le temps prévu en ce vendredi 20.\r\nL'eau a paliri est a filtrer nous disait la gardienne.\r\nMon pote d'aventure fait l'erreur d'en boire un peu.\r\nIl passe la nuit malade après l'arrivée et ce samedi soir il est HS , on l'a échappé belle.\r\nQuelle aventure , la Corse nous aura mis rudement a l'épreuve et jusqu'au bout.\r\nElle demande physique et mental, rien n'est facile de bout en bout.\r\nPour moi , c'était une façon de \"fêter\" mon départ à la retraite ( 62 piges ) ce mois ci  , et ma fois , suis heureux d'avoir pu effectuer tout le parcours.\r\nMerci aux Bretons qui m'ont donné des anti-inflammatoires et aux écossais qui nous ont suggéré de contourner l'étape de pietra piana par le bas .\r\nEt les deux copains québécois sont arrivés comme nous le même jour en partant le même vendredi 6.\r\nC'était une vraie épopée .\r\nLa parcours est extraordinaire, les paysages très différents, et tous les randonneurs rencontrés étaient dans l'entraide et la bienveillance.\r\nBeaucoup de jeunes 20/30 ans , dynamiques et courageux. Bravo a cette belle jeunesse 👏.\r\nUne expérience inoubliable.\r\n\r\nCorsica , tu me manques déjà 💕 \r\nJ'ai aimé :\r\nLa beauté sauvage de tes forêts , les pins laricio centenaires dans le nord , les pins maritimes dans le sud .\r\nMais aussi les forêts de hêtres , et de bouleaux .\r\nLa rusticité et gentillesse de tes habitants , les discussions avec le berger dans un village perdu au fin fond de la montagne .\r\nLes vues extraordinaires lorsque nous marchions sur les crêtes , et que l'on voyait la mer à l'est et à l'ouest.\r\nLes parcours en altitude, avec des passages ludiques en rocher , comme suspendu entre ciel et mer , quand il fallait se faufiler entre les blocs de granite .\r\nSes animaux qui la peuplent , ses belles chèvres de montagne , les cochons en liberté , les salamandres orange et jaunes qui guidaient nos pas sous la pluie , les chiens de berger qui couraient autour de nous , et le jeune chien qui est venu me faire la fête un matin en sortant de la tente .\r\nLe soleil quand il se levait le matin et enflammait les parois au dessus de nous.\r\nLes lasagnes à la bergerie de I croci.\r\nLa charcuterie la meilleure que j'ai jamais goûté , chez ce berger éleveur de cochons , hors gr.\r\nLa solidarité et l'entraide sur les sentiers , tous unis dans le même effort.\r\nLes chevaux 🐴 qui parfois tournaient autour de la tente la nuit.\r\nLa pietra qui chaque soir nous désaltérait .\r\nLes verres de myrthe que l'on a bu le dernier soir avec les amis québécois , en se couchant tard la seule fois , pour fêter la fin du voyage .\r\nCe renard 🦊 que j'ai croisé dans la forêt en remontant sur Onda .\r\nLa majesté des aiguilles de Bavella, malgré la pluie ce jour là , mais avec une éclaircie au col , pour conclure en beauté ce magnifique parcours .\r\nLes bergeries ou nous avons toujours bien mangé et pu récupérer .\r\nLa douche chaude à I Croci , après une dure journée , et la réponse que je fis au gars qui me demandait si elle était bonne : la meilleure de ma vie , lui avais je répondu ! \r\nLe petit dej copieux au Castel du Vergio , après une première semaine d'efforts , dans le nord .\r\nLa tête du gardien à une bergerie , quand je lui ai demandé un matin un simple oeuf dur , en guise de repas de midi .\r\nCes écossais qui ont abandonné à Vizavonne, craignant le froid et la pluie dans le suite du voyage , mais avec qui on a passé de bons moments .\r\n\"Michel\" , ce courageux bonhomme de 73 ans , ancien rugbyman , parlant le provençal , qui était épuisé en arrivant au gîte , et s'était perdu sous la pluie ; une famille du village l'a invité à manger chez eux et conduit en voiture ensuite au gite pour qu'il puisse récupérer avec nous.\r\nCes jeunes plein de peps et d'énergie , qui doublaient toutes les étapes pour certains , et partaient à 5h du matin , quel courage.\r\nLa propreté du GR , je n'ai vu quasiment aucun papier au sol , le respect de la Nature qu'avaient les jeunes , nombreux la vingtaine seulement .\r\nLa gentillesse de ces bretons qui m'ont donné des antiflammatoires l'avant dernier jour .\r\nLa grande dernière bière bue au bar du GR20, après une dernière étape très difficile ou je ne pouvais plus marcher , m'obligeant à faire encore une pause dans le dernier km , dans le village même de conca , pour calmer la douleur .\r\nLes semelles pomoca de mes salewa , qui m'ont rassuré et aidé dans bien des situations , je n'ai pas fait une seule glissade .\r\nMon sac a dos tout simple , pas de marque , mais qui a bien fait le job , et les bons choix faits pour l'équipement , il manquait juste un bonnet et des gants plus chauds , pour le reste bien heureux d'avoir pris la doudoune que j'avais hésité a prendre pour alléger au max .\r\nMa paille filtrante LifeStraw , légère et peu encombrante , qui m'a bien servie certains jours notamment le dernier .\r\nLes souvenirs que l'on gardera longtemps en nous .\r\nj'ai moins aimé :\r\nLa chute du gars devant moi sur des dalles glissantes en descendant de la pointe des éboulis , étape 4 la plus difficile , et sa cabriole plus bas sur les rochers , j'ai cru qu'il ne se relèverait pas .\r\nL'inquiétude quand le copain a glissé sur une dalle bombée et s'est aggripé aux chaines pour ne pas tomber bien plus bas , se cognant au tibia contre le granit .\r\nLa grosse étape l'avant dernier jour , ou l'on a marché pendant 24km et ou nous sommes partis à l'aube sans déjeuner car il n'y en avait pas à Usciolu , je n'avais pas d'énergie le matin.\r\nLe \"repas\" du soir ( un plat de pates avec des bouts de carotte ) pris en plein vent par une température glaciale , en quelques minutes à Usciolu\r\nLa seule toilette à Prati , ou la chasse d'eau était un tuyau d'arrosage ...\r\nCertaines cheminées à désescalader , non protégées , ou l'on aurait pas pu passer s'il avait plu , ça aurait été très dangereux.\r\nL'\"acceuil\" , quelque peu bourru , à la halte des princes , à vizzavone .\r\nCertains matelas très limites dans les tentes de loc , sensation de dormir à même le sol , pas top pour récupérer ...\r\nLe vent glacial à la pointe des éboulis , qui a fait abandonner nombre de personnes .\r\nLa pluie l'avant dernier jour , avant Bavella , le jour ou il ne fallait pas , trainant ma douleur au tendon.\r\nLa remontée interminable dans la forêt pleine de ronces et humide , glissante , en direction de Onda , depuis le village perdu de Chiusa .\r\nLes 5h sous la pluie fine puis la grosse pluie , pour descendre de Manganu jusqu'à Guagno ( heureusement la chaleur et le confort du gîte ensuite ) \r\nDes gants plus chaud qui m'ont manqué , le matin à Onda ou il faisait très froid .\r\nLes rochers et dalles , jusqu'au dernier jour , jusqu'à l'overdose ; très peu de sentiers plats et sans caillasses !\r\nMon pote en rêvait la nuit , des rochers !\r\nL'angoisse en sortant de la tente à manganu , et voyant le brouillard la pluie et le vent , sur les crêtes pour notre étape , et comment nous allions faire .\r\nça fait partie du jeu et nous savions que le chemin ne serait pas semé de pétales de roses .\r\nMais nous avons vécu un vrai GR20 , comme m'a dit une personne.\r\nEt ça nous a donné envie de revenir , donc le bilan est positif largement .\r\n"
-
+        "story": "Nous sommes parti le vendredi 6.\r\nLe lundi 9 on prenait la tempête au col des éboulis pour l'étape 4 du Cinto , le vent nous couchait sur les crêtes.\r\nL'étape la plus difficile du parcours , est \"corsé\" par ce vent tempétueux ( aéroports fermés ce jour là ).\r\nEnsuite le jeudi 12 la tempête encore , avec pluie brouillard , grêle sur les arêtes , a manganu.\r\nUn groupe d'ecossais nous donne la soluce : descendre , descendre jusqu'à guagno ou un gîte nous attend. On sèche nos affaires après 5h sous la pluie.\r\nLe lendemain on remonte par un sentier sauvage en forêt , jusqu'à onda , sautant l'étape pietra piana ou c'est la grêle la haut.\r\nPartis après la pluie on évite celle ci ce vendredi 13.\r\nOn continue , mais le froid l'humidité nous poursuit et les deux étapes a prati puis isciolu dans un inconfort total ( une assiette de pâte avalée en vitesse en plein vent glacial sur la terrasse a isciolu 🫣) entament notre moral.\r\nAvant de descendre sur vizzavonne et le sud , c'est la neige que nous rencontrons sur un sol gelé, au Bocca avant la grande descente vers le début du sud.\r\nNous nous retournons a ce col à 2100m, pour jeter un dernier regard vers les montagnes du nord : celles ci sont toutes blanches , recouvertes de neige 🫣.\r\nNous n'aurions pas pu passer , à quelques jours près ( le copain a réussi a gravir le cinto ce jour là ).\r\nMercredi 18 j'attrape une douleur au tendon d'Achille droit , je souffre pour atteindre la bergerie de croci ( meilleure étape du parcours ) et ne peut atteindre asinau.\r\nJeudi 19 on double pour aller jusqu'à paliri mais ce sera un chemin de croix pour moi, la douleur reste présente .\r\nA bavella j'en bave !\r\nNous attrapons la pluie a midi et j'arrive extenué a 18h20 a paliri.\r\nC'était notre second jour sous la pluie seulement en ayant jonglé avec la météo et ajustant nos étapes .\r\nReste la dernière étape vers conca.\r\nLa descente est longue longue , et ça remonte encore dans la caillasse .\r\nJe termine avec la douleur pendant toute l'étape encore mais je passe.\r\nJe vois 1400m d- a ma montre..\r\nFinalement nous touchons au but dans le temps prévu en ce vendredi 20.\r\nL'eau a paliri est a filtrer nous disait la gardienne.\r\nMon pote d'aventure fait l'erreur d'en boire un peu.\r\nIl passe la nuit malade après l'arrivée et ce samedi soir il est HS , on l'a échappé belle.\r\nQuelle aventure , la Corse nous aura mis rudement a l'épreuve et jusqu'au bout.\r\nElle demande physique et mental, rien n'est facile de bout en bout.\r\nPour moi , c'était une façon de \"fêter\" mon départ à la retraite ( 62 piges ) ce mois ci  , et ma fois , suis heureux d'avoir pu effectuer tout le parcours.\r\nMerci aux Bretons qui m'ont donné des anti-inflammatoires et aux écossais qui nous ont suggéré de contourner l'étape de pietra piana par le bas .\r\nEt les deux copains québécois sont arrivés comme nous le même jour en partant le même vendredi 6.\r\nC'était une vraie épopée .\r\nLa parcours est extraordinaire, les paysages très différents, et tous les randonneurs rencontrés étaient dans l'entraide et la bienveillance.\r\nBeaucoup de jeunes 20/30 ans , dynamiques et courageux. Bravo a cette belle jeunesse 👏.\r\nUne expérience inoubliable.\r\n\r\nCorsica , tu me manques déjà 💕 \r\nJ'ai aimé :\r\nLa beauté sauvage de tes forêts , les pins laricio centenaires dans le nord , les pins maritimes dans le sud .\r\nMais aussi les forêts de hêtres , et de bouleaux .\r\nLa rusticité et gentillesse de tes habitants , les discussions avec le berger dans un village perdu au fin fond de la montagne .\r\nLes vues extraordinaires lorsque nous marchions sur les crêtes , et que l'on voyait la mer à l'est et à l'ouest.\r\nLes parcours en altitude, avec des passages ludiques en rocher , comme suspendu entre ciel et mer , quand il fallait se faufiler entre les blocs de granite .\r\nSes animaux qui la peuplent , ses belles chèvres de montagne , les cochons en liberté , les salamandres orange et jaunes qui guidaient nos pas sous la pluie , les chiens de berger qui couraient autour de nous , et le jeune chien qui est venu me faire la fête un matin en sortant de la tente .\r\nLe soleil quand il se levait le matin et enflammait les parois au dessus de nous.\r\nLes lasagnes à la bergerie de I croci.\r\nLa charcuterie la meilleure que j'ai jamais goûté , chez ce berger éleveur de cochons , hors gr.\r\nLa solidarité et l'entraide sur les sentiers , tous unis dans le même effort.\r\nLes chevaux 🐴 qui parfois tournaient autour de la tente la nuit.\r\nLa pietra qui chaque soir nous désaltérait .\r\nLes verres de myrthe que l'on a bu le dernier soir avec les amis québécois , en se couchant tard la seule fois , pour fêter la fin du voyage .\r\nCe renard 🦊 que j'ai croisé dans la forêt en remontant sur Onda .\r\nLa majesté des aiguilles de Bavella, malgré la pluie ce jour là , mais avec une éclaircie au col , pour conclure en beauté ce magnifique parcours .\r\nLes bergeries ou nous avons toujours bien mangé et pu récupérer .\r\nLa douche chaude à I Croci , après une dure journée , et la réponse que je fis au gars qui me demandait si elle était bonne : la meilleure de ma vie , lui avais je répondu ! \r\nLe petit dej copieux au Castel du Vergio , après une première semaine d'efforts , dans le nord .\r\nLa tête du gardien à une bergerie , quand je lui ai demandé un matin un simple oeuf dur , en guise de repas de midi .\r\nCes écossais qui ont abandonné à Vizavonne, craignant le froid et la pluie dans le suite du voyage , mais avec qui on a passé de bons moments .\r\n\"Michel\" , ce courageux bonhomme de 73 ans , ancien rugbyman , parlant le provençal , qui était épuisé en arrivant au gîte , et s'était perdu sous la pluie ; une famille du village l'a invité à manger chez eux et conduit en voiture ensuite au gite pour qu'il puisse récupérer avec nous.\r\nCes jeunes plein de peps et d'énergie , qui doublaient toutes les étapes pour certains , et partaient à 5h du matin , quel courage.\r\nLa propreté du GR , je n'ai vu quasiment aucun papier au sol , le respect de la Nature qu'avaient les jeunes , nombreux la vingtaine seulement .\r\nLa gentillesse de ces bretons qui m'ont donné des antiflammatoires l'avant dernier jour .\r\nLa grande dernière bière bue au bar du GR20, après une dernière étape très difficile ou je ne pouvais plus marcher , m'obligeant à faire encore une pause dans le dernier km , dans le village même de conca , pour calmer la douleur .\r\nLes semelles pomoca de mes salewa , qui m'ont rassuré et aidé dans bien des situations , je n'ai pas fait une seule glissade .\r\nMon sac a dos tout simple , pas de marque , mais qui a bien fait le job , et les bons choix faits pour l'équipement , il manquait juste un bonnet et des gants plus chauds , pour le reste bien heureux d'avoir pris la doudoune que j'avais hésité a prendre pour alléger au max .\r\nMa paille filtrante LifeStraw , légère et peu encombrante , qui m'a bien servie certains jours notamment le dernier .\r\nLes souvenirs que l'on gardera longtemps en nous .\r\nj'ai moins aimé :\r\nLa chute du gars devant moi sur des dalles glissantes en descendant de la pointe des éboulis , étape 4 la plus difficile , et sa cabriole plus bas sur les rochers , j'ai cru qu'il ne se relèverait pas .\r\nL'inquiétude quand le copain a glissé sur une dalle bombée et s'est aggripé aux chaines pour ne pas tomber bien plus bas , se cognant au tibia contre le granit .\r\nLa grosse étape l'avant dernier jour , ou l'on a marché pendant 24km et ou nous sommes partis à l'aube sans déjeuner car il n'y en avait pas à Usciolu , je n'avais pas d'énergie le matin.\r\nLe \"repas\" du soir ( un plat de pates avec des bouts de carotte ) pris en plein vent par une température glaciale , en quelques minutes à Usciolu\r\nLa seule toilette à Prati , ou la chasse d'eau était un tuyau d'arrosage ...\r\nCertaines cheminées à désescalader , non protégées , ou l'on aurait pas pu passer s'il avait plu , ça aurait été très dangereux.\r\nL'\"acceuil\" , quelque peu bourru , à la halte des princes , à vizzavone .\r\nCertains matelas très limites dans les tentes de loc , sensation de dormir à même le sol , pas top pour récupérer ...\r\nLe vent glacial à la pointe des éboulis , qui a fait abandonner nombre de personnes .\r\nLa pluie l'avant dernier jour , avant Bavella , le jour ou il ne fallait pas , trainant ma douleur au tendon.\r\nLa remontée interminable dans la forêt pleine de ronces et humide , glissante , en direction de Onda , depuis le village perdu de Chiusa .\r\nLes 5h sous la pluie fine puis la grosse pluie , pour descendre de Manganu jusqu'à Guagno ( heureusement la chaleur et le confort du gîte ensuite ) \r\nDes gants plus chaud qui m'ont manqué , le matin à Onda ou il faisait très froid .\r\nLes rochers et dalles , jusqu'au dernier jour , jusqu'à l'overdose ; très peu de sentiers plats et sans caillasses !\r\nMon pote en rêvait la nuit , des rochers !\r\nL'angoisse en sortant de la tente à manganu , et voyant le brouillard la pluie et le vent , sur les crêtes pour notre étape , et comment nous allions faire .\r\nça fait partie du jeu et nous savions que le chemin ne serait pas semé de pétales de roses .\r\nMais nous avons vécu un vrai GR20 , comme m'a dit une personne.\r\nEt ça nous a donné envie de revenir , donc le bilan est positif largement .\r\n"
     }
 }
